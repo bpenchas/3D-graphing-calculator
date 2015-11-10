@@ -5,7 +5,6 @@
  */
 
 import acm.program.*;
-
 import acm.graphics.*;
 
 public class GraphicsContest extends GraphicsProgram {
@@ -55,6 +54,13 @@ public class GraphicsContest extends GraphicsProgram {
 			GPoint second = toPixel(projection3Dto2D(secondPoint));
 			GLine tobinLine = lineFromPoints(first, second);
 			add(tobinLine);
+			
+			try {
+				Thread.sleep(16);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	
