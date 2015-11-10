@@ -49,8 +49,8 @@ public class GraphicsContest extends GraphicsProgram {
 	public void run() {
 		
 		
-		Point3D myPoint = new Point3D(5, 5, 5);
-		Point3D secondPoint = new Point3D(10, 10, 2);
+		Point3D myPoint = new Point3D(5, 5, 0);
+		Point3D secondPoint = new Point3D(0, 0, 0);
 		GPoint first = toPixel(projection3Dto2D(myPoint));
 		GPoint second = toPixel(projection3Dto2D(secondPoint));
 		GLine tobinLine = lineFromPoints(first, second);
