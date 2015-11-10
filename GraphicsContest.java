@@ -45,7 +45,7 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 		
 		public GPoint to2D() {
-			return new GPoint(x * Math.exp(z), y * Math.exp(z));
+			return new GPoint(x * Math.pow(1.1, z), y * Math.pow(1.1, z));
 		}
 		
 		public Point3D rotate(double theta) {
