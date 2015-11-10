@@ -70,7 +70,7 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		while(true) {
 			removeAll();
-			add(tobinLine.to2D());
+			add(toPixel(tobinLine.to2D()));
 			
 			try {
 				Thread.sleep(5);
@@ -89,6 +89,10 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	private GPoint toPixel(GPoint pt) {
 		return new GPoint((pt.getX() + 10) / 20 * getWidth(), (10 - pt.getY()) / 20 * getHeight());
+	}
+	
+	private GLine toPixel(GLine line) {
+		return lineFromPoints(toPixel(line.getStartPoint()), toPixel(line.getEndPoint()));
 	}
 	
 
