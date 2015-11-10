@@ -68,7 +68,7 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 	private GPoint toPixel(GPoint pt) {
-		return new GPoint((pt.getX() + 10) / 20 * getWidth(), (pt.getY() + 10) / 20 * getHeight());
+		return new GPoint((pt.getX() + 10) / 20 * getWidth(), (10 - pt.getY()) / 20 * getHeight());
 	}
 
 }
