@@ -64,15 +64,13 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 	public void run() {
-		Point3D myPoint = new Point3D(5, 5, 0);
-		Point3D secondPoint = new Point3D(0, 0, 0);
+		Point3D first = new Point3D(5, 5, 0);
+		Point3D second = new Point3D(0, 0, 0);
+		Line3D tobinLine = new Line3D(first, second);
 		
 		while(true) {
-			GPoint first = toPixel(projection3Dto2D(myPoint));
-			GPoint second = toPixel(projection3Dto2D(secondPoint));
-			GLine tobinLine = lineFromPoints(first, second);
 			removeAll();
-			add(tobinLine);
+			add(tobinLine.to2D());
 			
 			try {
 				Thread.sleep(5);
