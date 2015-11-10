@@ -72,10 +72,6 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 	public void run() {
-		Point3D first = new Point3D(5, 5, 0);
-		Point3D second = new Point3D(0, 0, 0);
-		Line3D tobinLine = new Line3D(first, second);
-		
 		Point3D z = new Point3D(0, 0, 10);
 		Point3D y = new Point3D(0, 10, 0);
 		Point3D x = new Point3D(10, 0, 0);
@@ -89,7 +85,9 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		while(true) {
 			removeAll();
-			add(toPixel(tobinLine.rotate(theta).to2D()));
+			add(toPixel(xAxis.rotate(theta).to2D()));
+			add(toPixel(yAxis.rotate(theta).to2D()));
+			add(toPixel(zAxis.rotate(theta).to2D()));
 			theta += 0.01;
 			try {
 				Thread.sleep(5);
