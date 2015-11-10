@@ -43,6 +43,24 @@ public class GraphicsContest extends GraphicsProgram {
 			this.y = y;
 			this.z = z;
 		}
+		
+		public GPoint to2D() {
+			return new GPoint(x * Math.exp(z), y * Math.exp(z));
+		}
+	}
+	
+	private class Line3D {
+		private Point3D first;
+		private Point3D second;
+
+		private GLine to2D() {
+			return lineFromPoints(first.to2D(), second.to2D());
+		}
+		
+		public Line3D(Point3D first, Point3D second) {
+			this.first = first;
+			this.second = second;
+		}
 	}
 	
 	public void run() {
@@ -55,6 +73,7 @@ public class GraphicsContest extends GraphicsProgram {
 			GLine tobinLine = lineFromPoints(first, second);
 			removeAll();
 			add(tobinLine);
+			
 			try {
 				Thread.sleep(5);
 			} catch (InterruptedException e) {
@@ -64,10 +83,7 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 	}
 	
-	private GPoint projection3Dto2D(Point3D pt) {
-		GPoint point = new GPoint(pt.x * Math.exp(pt.z), pt.y * Math.exp(pt.z));
-		return point;
-	}
+	
 	
 	private GLine lineFromPoints(GPoint first, GPoint second) {
 		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
@@ -76,5 +92,6 @@ public class GraphicsContest extends GraphicsProgram {
 	private GPoint toPixel(GPoint pt) {
 		return new GPoint((pt.getX() + 10) / 20 * getWidth(), (10 - pt.getY()) / 20 * getHeight());
 	}
+	
 
 }
