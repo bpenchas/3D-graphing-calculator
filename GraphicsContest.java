@@ -76,6 +76,15 @@ public class GraphicsContest extends GraphicsProgram {
 		Point3D second = new Point3D(0, 0, 0);
 		Line3D tobinLine = new Line3D(first, second);
 		
+		Point3D z = new Point3D(0, 0, 10);
+		Point3D y = new Point3D(0, 10, 0);
+		Point3D x = new Point3D(10, 0, 0);
+		Point3D origin = new Point3D(0, 0, 0);
+		
+		Line3D xAxis = new Line3D(origin, x);
+		Line3D yAxis = new Line3D(origin, y);
+		Line3D zAxis = new Line3D(origin, z);
+		
 		double theta = 0;
 		
 		while(true) {
