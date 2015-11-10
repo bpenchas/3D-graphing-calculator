@@ -49,18 +49,12 @@ public class GraphicsContest extends GraphicsProgram {
 		Point3D myPoint = new Point3D(5, 5, 0);
 		Point3D secondPoint = new Point3D(0, 0, 0);
 		while(true) {
-			removeAll();
 			GPoint first = toPixel(projection3Dto2D(myPoint));
 			GPoint second = toPixel(projection3Dto2D(secondPoint));
 			GLine tobinLine = lineFromPoints(first, second);
+			removeAll();
 			add(tobinLine);
 			
-			try {
-				Thread.sleep(16);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
 	}
 	
