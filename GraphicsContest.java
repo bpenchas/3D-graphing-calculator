@@ -10,6 +10,9 @@ import acm.graphics.*;
 
 public class GraphicsContest extends GraphicsProgram {
 
+	private static final int APPLICATION_WIDTH = 600;
+	private static final int APPLICATION_HEIGHT = 600;
+	
 	private class Point3D {
 		private double x;
 		private double y;
@@ -51,20 +54,24 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		Point3D myPoint = new Point3D(5, 5, 5);
 		Point3D secondPoint = new Point3D(10, 10, 2);
-		GPoint first = projection(myPoint);
-		GPoint second = projection(secondPoint);
+		GPoint first = projection3Dto2D(myPoint);
+		GPoint second = projection3Dto2D(secondPoint);
 		GLine tobinLine = lineFromPoints(first, second);
 		add(tobinLine);
 		
 	}
 	
-	private GPoint projection(Point3D pt) {
+	private GPoint projection3Dto2D(Point3D pt) {
 		GPoint point = new GPoint(pt.x * Math.exp(pt.z), pt.y * Math.exp(pt.z));
 		return point;
 	}
 	
 	private GLine lineFromPoints(GPoint first, GPoint second) {
 		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
+	}
+	
+	private GPoint toPixel(GPoint pt) {
+		return new GPoint(pt.getX())
 	}
 
 }
