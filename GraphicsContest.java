@@ -47,6 +47,10 @@ public class GraphicsContest extends GraphicsProgram {
 		public GPoint to2D() {
 			return new GPoint(x * Math.exp(z), y * Math.exp(z));
 		}
+		
+		public Point3D rotate(double theta) {
+			return new Point3D(x * Math.cos(theta) + 0 - z * Math.sin(theta), y, x * Math.sin(theta) + 0 + z * Math.cos(theta));
+		}
 	}
 	
 	private class Line3D {
@@ -61,6 +65,10 @@ public class GraphicsContest extends GraphicsProgram {
 			this.first = first;
 			this.second = second;
 		}
+		
+		public Line3D rotate(double theta){
+			return new Line3D(first.rotate(theta), second.rotate(theta));
+		}
 	}
 	
 	public void run() {
@@ -68,10 +76,12 @@ public class GraphicsContest extends GraphicsProgram {
 		Point3D second = new Point3D(0, 0, 0);
 		Line3D tobinLine = new Line3D(first, second);
 		
+		double theta = 0;
+		
 		while(true) {
 			removeAll();
-			add(toPixel(tobinLine.to2D()));
-			
+			add(toPixel(tobinLine.rotate(theta).to2D()));
+			theta += 0.01;
 			try {
 				Thread.sleep(5);
 			} catch (InterruptedException e) {
