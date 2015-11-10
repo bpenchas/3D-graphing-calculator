@@ -56,7 +56,7 @@ public class GraphicsContest extends GraphicsProgram {
 			removeAll();
 			add(tobinLine);
 			try {
-				Thread.sleep(1);
+				Thread.sleep(5);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
