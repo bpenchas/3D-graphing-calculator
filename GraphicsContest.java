@@ -79,7 +79,7 @@ public class GraphicsContest extends GraphicsProgram {
 		double theta = 0;
 		
 		while(true) {
-			//removeAll();
+			removeAll();
 			add(toPixel(tobinLine.rotate(theta).to2D()));
 			theta += 0.01;
 			try {
