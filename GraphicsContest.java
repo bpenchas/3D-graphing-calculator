@@ -5,12 +5,14 @@
  */
 
 import acm.program.*;
+
 import acm.graphics.*;
 
 public class GraphicsContest extends GraphicsProgram {
 
 	public void run() {
-		/* Empty */
+		GLine tobinLine = new GLine(0,0,5,5);
+		add(tobinLine);
 	}
 
 }
