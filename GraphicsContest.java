@@ -149,12 +149,16 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS);
 		Queue result = new Queue();
+		Stack operators = new Stack();
 		
 		while(st.hasMoreTokens()) {
 			
 			String token = st.nextToken();
-			if (token.matches("[0-9]+")) {
+			if (token.matches("[0-1000]+")) {
 				result.enqueue(Integer.parseInt(token));
+			}
+			if (token.matches(DELIMITERS) && operators.isEmpty()) {
+				operators.push(token);
 			}
 		}
 		
