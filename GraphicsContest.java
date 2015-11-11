@@ -21,6 +21,7 @@ public class GraphicsContest extends GraphicsProgram {
 	private int oldMouseX;
 	private int oldMouseY;
 	
+	String DELIMITERS = "+-*/^()";
 	public void mousePressed(MouseEvent e) {
 		oldMouseX = e.getX();
 		oldMouseY = e.getY();
@@ -89,7 +90,27 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	
 	
-	
+	public class Queue {
+		private LinkedList list;
+		public Queue() {
+			// Create a new LinkedList.
+			list = new LinkedList();
+		}
+
+		public boolean isEmpty() {
+			return (list.size() == 0);
+		}
+
+		public void enqueue(int num) {
+			list.add(num);
+		}
+
+		public Object dequeue() {
+			Object item = list.get(1);
+			list.remove(1);
+			return item;
+		}
+	}
 	
 	private class Line3D {
 		private Point3D first;
@@ -126,7 +147,16 @@ public class GraphicsContest extends GraphicsProgram {
 		IODialog dialog = getDialog();
 		String equation = dialog.readLine("Enter an equation:");
 		
-		StringTokenizer st = new StringTokenizer();
+		StringTokenizer st = new StringTokenizer(equation, DELIMITERS);
+		Queue result = new Queue();
+		
+		while(st.hasMoreTokens()) {
+			
+			String token = st.nextToken();
+			if (token.matches("[0-9]+")) {
+				result.enqueue(Integer.parseInt(token));
+			}
+		}
 		
 		while(true) {
 			costheta = Math.cos(theta);
