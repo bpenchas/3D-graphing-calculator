@@ -17,7 +17,7 @@ public class GraphicsContest extends GraphicsProgram {
 	private double sinphi = Math.sin(phi);
 	
 	private static double cameraToPlane = 10;
-	private static double cameraToOrigin = 15;
+	private static double cameraToOrigin = 25;
 	
 	private class Point3D {
 		private double x;
