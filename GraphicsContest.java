@@ -16,8 +16,8 @@ public class GraphicsContest extends GraphicsProgram {
 	private double cosphi = Math.cos(phi);
 	private double sinphi = Math.sin(phi);
 	
-	private static double cameraToPlane = 5;
-	private static double cameraToOrigin = 10;
+	private static double cameraToPlane = 45;
+	private static double cameraToOrigin = 50;
 	
 	private class Point3D {
 		private double x;
