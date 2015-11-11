@@ -134,6 +134,8 @@ public class GraphicsContest extends GraphicsProgram {
 			add(toPixel(yAxis.rotate().to2D()));
 			add(toPixel(zAxis.rotate().to2D()));
 			add(toPixel(test.rotate().to2D()));
+			add(toPixel(test2.rotate().to2D()));
+			add(toPixel(test3.rotate().to2D()));
 			
 			try {
 				Thread.sleep(5);
