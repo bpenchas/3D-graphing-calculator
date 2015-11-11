@@ -15,7 +15,7 @@ public class GraphicsContest extends GraphicsProgram {
 		addMouseListeners();
 	}
 	
-	private boolean stillPressed = false;
+
 	private int oldMouseX;
 	private int oldMouseY;
 	
