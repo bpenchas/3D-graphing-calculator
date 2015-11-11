@@ -24,7 +24,7 @@ public class GraphicsContest extends GraphicsProgram {
 		oldMouseY = e.getY();
 	}
 	public void mouseDragged(MouseEvent e) {
-		theta += (e.getX() - oldMouseX) / 85.0;
+		theta -= (e.getX() - oldMouseX) / 85.0;
 		phi += (e.getY() - oldMouseY) / 85.0;
 		
 		oldMouseX = e.getX();
