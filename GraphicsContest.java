@@ -55,7 +55,7 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 		
 		public GPoint to2D() {
-			return new GPoint(x * cameraToPlane / (cameraToOrigin - z), y * 10 / (15 - z));
+			return new GPoint(x * cameraToPlane / (cameraToOrigin - z), y * cameraToPlane / (cameraToOrigin - z));
 		}
 		
 		public Point3D rotate() {
