@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 
 import acm.program.*;
 import acm.graphics.*;
+import acm.io.IODialog;
 
 public class GraphicsContest extends GraphicsProgram {
 	
@@ -121,7 +122,8 @@ public class GraphicsContest extends GraphicsProgram {
 		Line3D test2 = new Line3D(y, z);
 		Line3D test3 = new Line3D(x, y);
 		
-		
+		IODialog dialog = getDialog();
+		String equation = dialog.readLine("Enter an equation:");
 		
 		while(true) {
 			costheta = Math.cos(theta);
