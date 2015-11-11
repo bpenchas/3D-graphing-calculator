@@ -52,7 +52,7 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 		
 		public GPoint to2D() {
-			return new GPoint(x * Math.pow(1.1, z), y * Math.pow(1.1, z));
+			return new GPoint(x * 10 / (15 - z), y * 10 / (15 - z));
 		}
 		
 		public Point3D rotate() {
