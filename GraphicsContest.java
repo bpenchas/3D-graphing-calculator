@@ -9,6 +9,13 @@ import acm.graphics.*;
 
 public class GraphicsContest extends GraphicsProgram {
 	
+	public double theta = 0;
+	public double phi = 0;
+	private double costheta = Math.cos(theta);
+	private double sintheta = Math.sin(theta);
+	private double cosphi = Math.cos(phi);
+	private double sinphi = Math.sin(phi);
+	
 	private class Point3D {
 		private double x;
 		private double y;
@@ -48,10 +55,14 @@ public class GraphicsContest extends GraphicsProgram {
 			return new GPoint(x * Math.pow(1.1, z), y * Math.pow(1.1, z));
 		}
 		
-		public Point3D rotate(double theta) {
-			return new Point3D(x * Math.cos(theta) + 0 - z * Math.sin(theta), y, x * Math.sin(theta) + 0 + z * Math.cos(theta));
+		public Point3D rotate() {
+			return new Point3D(x * costheta - z * sintheta, x * -sintheta * sinphi + y * cosphi - z* sinphi * costheta, x* sintheta * cosphi + y * sinphi + z * costheta * cosphi);
 		}
 	}
+	
+	
+	
+	
 	
 	private class Line3D {
 		private Point3D first;
@@ -66,8 +77,8 @@ public class GraphicsContest extends GraphicsProgram {
 			this.second = second;
 		}
 		
-		public Line3D rotate(double theta){
-			return new Line3D(first.rotate(theta), second.rotate(theta));
+		public Line3D rotate(){
+			return new Line3D(first.rotate(), second.rotate());
 		}
 	}
 	
@@ -81,13 +92,13 @@ public class GraphicsContest extends GraphicsProgram {
 		Line3D yAxis = new Line3D(origin, y);
 		Line3D zAxis = new Line3D(origin, z);
 		
-		double theta = 0;
+		
 		
 		while(true) {
 			removeAll();
-			add(toPixel(xAxis.rotate(theta).to2D()));
-			add(toPixel(yAxis.rotate(theta).to2D()));
-			add(toPixel(zAxis.rotate(theta).to2D()));
+			add(toPixel(xAxis.rotate().to2D()));
+			add(toPixel(yAxis.rotate().to2D()));
+			add(toPixel(zAxis.rotate().to2D()));
 			theta += 0.01;
 			try {
 				Thread.sleep(5);
