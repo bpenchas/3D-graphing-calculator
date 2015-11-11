@@ -118,6 +118,8 @@ public class GraphicsContest extends GraphicsProgram {
 		Line3D zAxis = new Line3D(origin, z);
 		
 		Line3D test = new Line3D(x, z);
+		Line3D test2 = new Line3D(y, z);
+		Line3D test3 = new Line3D(x, y);
 		
 		
 		
