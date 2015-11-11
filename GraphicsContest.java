@@ -16,6 +16,9 @@ public class GraphicsContest extends GraphicsProgram {
 	private double cosphi = Math.cos(phi);
 	private double sinphi = Math.sin(phi);
 	
+	private static double cameraToPlane = 5;
+	private static double cameraToOrigin = 10;
+	
 	private class Point3D {
 		private double x;
 		private double y;
@@ -52,7 +55,7 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 		
 		public GPoint to2D() {
-			return new GPoint(x * 10 / (15 - z), y * 10 / (15 - z));
+			return new GPoint(x * cameraToPlane / (cameraToOrigin - z), y * 10 / (15 - z));
 		}
 		
 		public Point3D rotate() {
