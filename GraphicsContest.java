@@ -4,10 +4,32 @@
  * --------------------------
  */
 
+import java.awt.event.MouseEvent;
+
 import acm.program.*;
 import acm.graphics.*;
 
 public class GraphicsContest extends GraphicsProgram {
+	
+	public void init() {
+		addMouseListeners();
+	}
+	
+	private boolean stillPressed = false;
+	private int oldMouseX;
+	private int oldMouseY;
+	
+	public void mousePressed(MouseEvent e) {
+		oldMouseX = e.getX();
+		oldMouseY = e.getY();
+	}
+	public void mouseDragged(MouseEvent e) {
+		theta += e.getX() - oldMouseX;
+		phi += e.getY() - oldMouseY;
+		
+		oldMouseX = e.getX();
+		oldMouseY = e.getY();
+	}
 	
 	public double theta = 0;
 	public double phi = 0;
