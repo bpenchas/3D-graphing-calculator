@@ -95,11 +95,17 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		
 		while(true) {
+			costheta = Math.cos(theta);
+			sintheta = Math.sin(theta);
+			cosphi = Math.cos(phi);
+			sinphi = Math.sin(phi);
+			
 			removeAll();
 			add(toPixel(xAxis.rotate().to2D()));
 			add(toPixel(yAxis.rotate().to2D()));
 			add(toPixel(zAxis.rotate().to2D()));
 			theta += 0.01;
+			phi = Math.sin(System.currentTimeMillis() / 1000.0);
 			try {
 				Thread.sleep(5);
 			} catch (InterruptedException e) {
