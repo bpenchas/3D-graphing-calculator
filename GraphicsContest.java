@@ -92,6 +92,8 @@ public class GraphicsContest extends GraphicsProgram {
 		Line3D yAxis = new Line3D(origin, y);
 		Line3D zAxis = new Line3D(origin, z);
 		
+		Line3D test = new Line3D(x, z);
+		
 		
 		
 		while(true) {
@@ -104,6 +106,7 @@ public class GraphicsContest extends GraphicsProgram {
 			add(toPixel(xAxis.rotate().to2D()));
 			add(toPixel(yAxis.rotate().to2D()));
 			add(toPixel(zAxis.rotate().to2D()));
+			add(toPixel(test.rotate().to2D()));
 			theta += 0.01;
 			phi = Math.sin(System.currentTimeMillis() / 1000.0);
 			try {
