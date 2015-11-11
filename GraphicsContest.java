@@ -112,6 +112,26 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 	}
 	
+	private void Evaluate() {
+		IODialog dialog = getDialog();
+		String equation = dialog.readLine("Enter an equation:");
+		
+		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
+		Queue result = new Queue();
+		Stack operators = new Stack();
+		
+		while(st.hasMoreTokens()) {
+			
+			String token = st.nextToken();
+			if (token.matches("[0-1000]+")) {
+				result.enqueue(Integer.parseInt(token));
+			}
+			if (token.matches(DELIMITERS) && operators.isEmpty()) {
+				operators.push(token);
+			}
+		}
+	}
+	
 	private class Line3D {
 		private Point3D first;
 		private Point3D second;
@@ -144,23 +164,7 @@ public class GraphicsContest extends GraphicsProgram {
 		Line3D test2 = new Line3D(y, z);
 		Line3D test3 = new Line3D(x, y);
 		
-		IODialog dialog = getDialog();
-		String equation = dialog.readLine("Enter an equation:");
-		
-		StringTokenizer st = new StringTokenizer(equation, DELIMITERS);
-		Queue result = new Queue();
-		Stack operators = new Stack();
-		
-		while(st.hasMoreTokens()) {
-			
-			String token = st.nextToken();
-			if (token.matches("[0-1000]+")) {
-				result.enqueue(Integer.parseInt(token));
-			}
-			if (token.matches(DELIMITERS) && operators.isEmpty()) {
-				operators.push(token);
-			}
-		}
+		Evaluate();
 		
 		while(true) {
 			costheta = Math.cos(theta);
