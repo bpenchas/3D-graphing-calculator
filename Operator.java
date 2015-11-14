@@ -1,6 +1,6 @@
 
 public enum Operator {
-	ADD, SUBTRACT, MULTIPLY, DIVIDE, EXPONENT, OPAREN, CPAREN;
+	ADD, SUBTRACT, MULTIPLY, DIVIDE, EXPONENT, OPAREN, CPAREN, NOOP;
 	
 	public int precedence() {
 		switch(this) {
@@ -18,5 +18,24 @@ public enum Operator {
 				return 0;
 				
 		}
+	}
+	
+	public static Operator fromString(String operator) {
+		switch(operator) {
+		case "+":
+			return ADD;
+		case "-":
+			return SUBTRACT;
+		case "*":
+			return MULTIPLY;
+		case "/":
+			return DIVIDE;
+		case "^":
+			return EXPONENT;
+		default:
+			return NOOP;
+			
+	}
+		
 	}
 }
