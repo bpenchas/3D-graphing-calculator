@@ -17,7 +17,7 @@ public enum Operator {
 			case OPAREN:
 				return 4;
 			case CPAREN:
-				return 4;
+				return 5;
 			default:
 				return 0;
 				
