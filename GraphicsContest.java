@@ -108,16 +108,18 @@ public class GraphicsContest extends GraphicsProgram {
 			
 			if (token.matches("[0-9]+")) {
 				result.add(Integer.parseInt(token));
+			} else {
+				if (operators.isEmpty()) {
+					operators.push(currentOperator);
+				}
+				if (operators.peek().precedence() < currentOperator.precedence()) {
+					operators.push(currentOperator);
+				}
+				if (operators.peek().precedence()  >= currentOperator.precedence()){
+					result.add(operators.pop());
+				}
 			}
-			if (token.matches(DELIMITERS) && operators.isEmpty()) {
-				operators.push(currentOperator);
-			}
-			if (token.matches(DELIMITERS) && operators.peek().precedence() < currentOperator.precedence()) {
-				operators.push(currentOperator);
-			}
-			if (token.matches(DELIMITERS) && operators.peek().precedence()  >= currentOperator.precedence()){
-				result.add(operators.pop());
-			}
+		
 		}
 	}
 	
