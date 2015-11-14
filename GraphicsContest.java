@@ -117,6 +117,10 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		
 		}
+		while (!operators.isEmpty()) {
+			result.add(operators.pop());
+		}
+		
 	}
 	
 	private class Line3D {
