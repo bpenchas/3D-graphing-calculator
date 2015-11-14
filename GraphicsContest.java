@@ -90,27 +90,7 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	
 	
-	public class Queue {
-		private LinkedList list;
-		public Queue() {
-			// Create a new LinkedList.
-			list = new LinkedList();
-		}
-
-		public boolean isEmpty() {
-			return (list.size() == 0);
-		}
-
-		public void enqueue(int num) {
-			list.add(num);
-		}
-
-		public Object dequeue() {
-			Object item = list.get(1);
-			list.remove(1);
-			return item;
-		}
-	}
+	
 	
 	
 	private void evaluate() {
@@ -118,25 +98,25 @@ public class GraphicsContest extends GraphicsProgram {
 		String equation = dialog.readLine("Enter an equation:");
 		
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
-		Queue result = new Queue();
-		Stack<String> operators = new Stack<String>();
+		LinkedList result = new LinkedList();
+		Stack<Operator> operators = new Stack<Operator>();
 		
 		while(st.hasMoreTokens()) {
 			
 			String token = st.nextToken();
-			Operator operator = Operator.fromString(token);
+			Operator currentOperator = Operator.fromString(token);
 			
 			if (token.matches("[0-9]+")) {
-				result.enqueue(Integer.parseInt(token));
+				result.add(Integer.parseInt(token));
 			}
 			if (token.matches(DELIMITERS) && operators.isEmpty()) {
-				operators.push(token);
+				operators.push(currentOperator);
 			}
-			if (token.matches(DELIMITERS) && precedence(operators.peek()) < precedence(token)) {
-				operators.push(token);
+			if (token.matches(DELIMITERS) && operators.peek().precedence() < currentOperator.precedence()) {
+				operators.push(currentOperator);
 			}
-			if (token.matches(DELIMITERS) && precedence(operators.peek()) >= precedence(token)) {
-				result.enqueue(operators.pop());
+			if (token.matches(DELIMITERS) && operators.peek().precedence()  >= currentOperator.precedence()){
+				result.add(operators.pop());
 			}
 		}
 	}
