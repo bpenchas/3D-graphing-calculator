@@ -112,22 +112,31 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 	}
 	
-	private void Evaluate() {
+	
+	private void evaluate() {
 		IODialog dialog = getDialog();
 		String equation = dialog.readLine("Enter an equation:");
 		
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
 		Queue result = new Queue();
-		Stack operators = new Stack();
+		Stack<String> operators = new Stack<String>();
 		
 		while(st.hasMoreTokens()) {
 			
 			String token = st.nextToken();
+			Operator operator = Operator.fromString(token);
+			
 			if (token.matches("[0-9]+")) {
 				result.enqueue(Integer.parseInt(token));
 			}
 			if (token.matches(DELIMITERS) && operators.isEmpty()) {
 				operators.push(token);
+			}
+			if (token.matches(DELIMITERS) && precedence(operators.peek()) < precedence(token)) {
+				operators.push(token);
+			}
+			if (token.matches(DELIMITERS) && precedence(operators.peek()) >= precedence(token)) {
+				result.enqueue(operators.pop());
 			}
 		}
 	}
