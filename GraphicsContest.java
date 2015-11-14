@@ -110,7 +110,7 @@ public class GraphicsContest extends GraphicsProgram {
 			if (token.matches("[0-9]+")) {
 				result.add(Integer.parseInt(token));
 			} else {
-				if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.stackPrecedence()) {
+				if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
 					operators.push(currentOperator);
 				} else {
 					result.add(operators.pop());
