@@ -120,7 +120,10 @@ public class GraphicsContest extends GraphicsProgram {
 		while (!operators.isEmpty()) {
 			result.add(operators.pop());
 		}
-		
+		Iterator iterator = result.iterator();
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
 	}
 	
 	private class Line3D {
@@ -156,6 +159,7 @@ public class GraphicsContest extends GraphicsProgram {
 		Line3D test3 = new Line3D(x, y);
 		
 		evaluate();
+		System.out.println(x);
 		
 		while(true) {
 			costheta = Math.cos(theta);
