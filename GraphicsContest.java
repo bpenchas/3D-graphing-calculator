@@ -114,6 +114,7 @@ public class GraphicsContest extends GraphicsProgram {
 					operators.push(currentOperator);
 				} else {
 					result.add(operators.pop());
+					operators.push(currentOperator);
 				}
 			}
 		
