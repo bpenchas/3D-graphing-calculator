@@ -32,6 +32,10 @@ public enum Operator {
 			return DIVIDE;
 		case "^":
 			return EXPONENT;
+		case "(":
+			return OPAREN;
+		case ")":
+			return CPAREN;
 		default:
 			return NOOP;
 			
