@@ -113,7 +113,9 @@ public class GraphicsContest extends GraphicsProgram {
 				if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
 					operators.push(currentOperator);
 				} else {
-					result.add(operators.pop());
+					while (operators.peek().stackPrecedence() >= currentOperator.inputPrecedence()) {
+						result.add(operators.pop());
+					}
 					operators.push(currentOperator);
 				}
 			}
