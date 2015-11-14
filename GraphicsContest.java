@@ -153,7 +153,7 @@ public class GraphicsContest extends GraphicsProgram {
 		Line3D test2 = new Line3D(y, z);
 		Line3D test3 = new Line3D(x, y);
 		
-		Evaluate();
+		evaluate();
 		
 		while(true) {
 			costheta = Math.cos(theta);
