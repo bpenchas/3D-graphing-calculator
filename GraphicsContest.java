@@ -123,7 +123,7 @@ public class GraphicsContest extends GraphicsProgram {
 		while(st.hasMoreTokens()) {
 			
 			String token = st.nextToken();
-			if (token.matches("[0-1000]+")) {
+			if (token.matches("[0-9]+")) {
 				result.enqueue(Integer.parseInt(token));
 			}
 			if (token.matches(DELIMITERS) && operators.isEmpty()) {
