@@ -14,6 +14,10 @@ public enum Operator {
 				return 2;
 			case EXPONENT:
 				return 3;
+			case OPAREN:
+				return 4;
+			case CPAREN:
+				return 4;
 			default:
 				return 0;
 				
