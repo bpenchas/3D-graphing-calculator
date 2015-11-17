@@ -168,7 +168,11 @@ public class GraphicsContest extends GraphicsProgram {
 			
 			for (int i = 0; i < rectArray.length; i ++) {
 				for (int j = 0; j < rectArray.length; j ++) {
-					add(rectArray[i][j].rotate(theta, phi).to2D());
+					GPolygon temp = rectArray[i][j].rotate(theta, phi).to2D();
+					if (temp != null) {
+						add(temp);
+					}
+					
 				}
 			}
 			
