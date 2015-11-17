@@ -7,6 +7,7 @@ public class Value implements Element {
 	
 	private ValueEnum state = ValueEnum.CONST;
 	private double constValue = 0;
+	
 	public static double xValue = 1;
 	public static double yValue = 1;
 	
@@ -26,7 +27,7 @@ public class Value implements Element {
 	
 	public static Value fromString(String token) {
 		if (token.matches("[0-9]+")) {
-			return constValue(Double.parseDouble(token));
+			return makeConstValue(Double.parseDouble(token));
 		} else if (token.matches("[xX]")) {
 			return xValue();
 		} else if (token.matches("[yY]")) {
@@ -36,7 +37,7 @@ public class Value implements Element {
 		}
 	}
 	
-	private static Value constValue(double input) {
+	private static Value makeConstValue(double input) {
 		Value value = new Value();
 		value.constValue = input;
 		value.state = ValueEnum.CONST;
