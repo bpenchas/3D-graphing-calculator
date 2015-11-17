@@ -57,7 +57,7 @@ public class GraphicsContest extends GraphicsProgram {
 			Operator currentOperator = Operator.fromString(token);
 			
 			if (token.matches("[0-9]+")) {
-				result.add(Integer.parseInt(token));
+				result.add(Double.parseDouble(token));
 			} else if (token.matches("[x,X,y,Y]")) {
 				 result.add(token);
 			} else {
