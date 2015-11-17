@@ -46,6 +46,21 @@ public class Value implements Element {
 		
 	}
 	
+
+	private static Value xValue() {
+		Value value = new Value();
+		value.state = ValueEnum.X;
+		return value;
+		
+	}
+	private static Value yValue() {
+		Value value = new Value();
+		value.state = ValueEnum.Y;
+		return value;
+		
+	}
+
+	
 	public String toString() {
 		switch(state) {
 		case CONST:
