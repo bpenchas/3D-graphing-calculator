@@ -22,9 +22,6 @@ public class GraphicsContest extends GraphicsProgram {
 		addMouseListeners();
 	}
 	
-
-	public static int APPLICATION_WIDTH;
-	public static int APPLICATION_HEIGHT;
 	
 	private int oldMouseX;
 	private int oldMouseY;
