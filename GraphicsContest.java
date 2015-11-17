@@ -139,10 +139,14 @@ public class GraphicsContest extends GraphicsProgram {
 				Value.xValue = 20 * (i / (pointArray.length - 1)) - 10;
 				Value.yValue = 20 * (j / (pointArray.length - 1)) - 10;
 				pointArray[i][j] = new Point3D(Value.xValue, Value.yValue, evaluatePostfix(result));
-				
 			}
 		}
 		
+		for (int i = 0; i <= rectArray.length; i ++) {
+			for (int j = 0; j <= rectArray.length; j ++) {
+				rectArray[i][j] = new Rect3D(pointArray[i][j], pointArray[i+1][j], pointArray[i+1][j+1], pointArray[i][j+1]);
+			}
+		}
 		
 		
 		while(true) {
@@ -152,6 +156,11 @@ public class GraphicsContest extends GraphicsProgram {
 			add(toPixel(yAxis.rotate(theta, phi).to2D()));
 			add(toPixel(zAxis.rotate(theta, phi).to2D()));
 			
+			for (int i = 0; i <= rectArray.length; i ++) {
+				for (int j = 0; j <= rectArray.length; j ++) {
+					add(toPixel(rectArray[i][j].rotate(theta, phi).to2D()));
+				}
+			}
 			
 			try {
 				Thread.sleep(5);
