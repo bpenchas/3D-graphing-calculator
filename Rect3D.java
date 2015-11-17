@@ -17,7 +17,14 @@ public class Rect3D {
 	}
 	
 	public GPolygon to2D() {
-		return new GPolygon(new GPoint[] {this.cornerOne.to2D(), this.cornerTwo.to2D(), this.cornerThree.to2D(), this.cornerFour.to2D()});
+		GPoint tempCornerOne = this.cornerOne.to2D();
+		GPoint tempCornerTwo = this.cornerTwo.to2D();
+		GPoint tempCornerThree = this.cornerThree.to2D();
+		GPoint tempCornerFour = this.cornerFour.to2D();
+		if (tempCornerOne == null || tempCornerTwo == null || tempCornerThree == null || tempCornerFour == null) {
+			return null;
+		}
+		return new GPolygon(new GPoint[] {tempCornerOne, tempCornerTwo, tempCornerThree, tempCornerFour});
 	}
 	
 	public Rect3D rotate(double theta, double phi){
