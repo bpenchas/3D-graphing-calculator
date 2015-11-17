@@ -20,8 +20,6 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	public void init() {
 		addMouseListeners();
-		APPLICATION_WIDTH = getWidth();
-		APPLICATION_HEIGHT = getHeight();
 	}
 	
 
@@ -126,6 +124,11 @@ public class GraphicsContest extends GraphicsProgram {
 	private Rect3D[][] rectArray = new Rect3D[20][20];
 	
 	public void run() {
+		
+
+		APPLICATION_WIDTH = getWidth();
+		APPLICATION_HEIGHT = getHeight();
+		
 		Point3D z = new Point3D(0, 0, 10);
 		Point3D y = new Point3D(0, 10, 0);
 		Point3D x = new Point3D(10, 0, 0);
@@ -138,6 +141,7 @@ public class GraphicsContest extends GraphicsProgram {
 //		Line3D test = new Line3D(x, z);
 //		Line3D test2 = new Line3D(y, z);
 //		Line3D test3 = new Line3D(x, y);
+		
 		
 		evaluate();
 		for (int i = 0; i < pointArray.length; i ++) {
