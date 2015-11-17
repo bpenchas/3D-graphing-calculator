@@ -37,7 +37,7 @@ public class Value implements Element {
 		}
 	}
 	
-	private static Value makeConstValue(double input) {
+	public static Value makeConstValue(double input) {
 		Value value = new Value();
 		value.constValue = input;
 		value.state = ValueEnum.CONST;
