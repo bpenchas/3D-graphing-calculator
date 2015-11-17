@@ -140,8 +140,8 @@ public class GraphicsContest extends GraphicsProgram {
 //		Line3D test3 = new Line3D(x, y);
 		
 		evaluate();
-		for (int i = 0; i <= pointArray.length; i ++) {
-			for (int j = 0; j <= pointArray.length; j ++) {
+		for (int i = 0; i < pointArray.length; i ++) {
+			for (int j = 0; j < pointArray.length; j ++) {
 				Value.xValue = 20 * (i / (pointArray.length - 1)) - 10;
 				Value.yValue = 20 * (j / (pointArray.length - 1)) - 10;
 				pointArray[i][j] = new Point3D(Value.xValue, Value.yValue, evaluatePostfix(result));
