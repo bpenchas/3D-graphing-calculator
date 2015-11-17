@@ -22,6 +22,8 @@ public class GraphicsContest extends GraphicsProgram {
 		addMouseListeners();
 	}
 	
+	public static int asdf = 55;
+	public static int asdfg = 1;
 	
 	private int oldMouseX;
 	private int oldMouseY;
