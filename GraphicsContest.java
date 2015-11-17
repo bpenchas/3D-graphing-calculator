@@ -148,13 +148,13 @@ public class GraphicsContest extends GraphicsProgram {
 				Value.xValue = 20 * (i / (pointArray.length - 1)) - 10;
 				Value.yValue = 20 * (j / (pointArray.length - 1)) - 10;
 				pointArray[i][j] = new Point3D(Value.xValue, Value.yValue, evaluatePostfix(result));
+				System.out.println(Value.xValue);
 			}
 		}
 		
 		for (int i = 0; i < rectArray.length; i ++) {
 			for (int j = 0; j < rectArray.length; j ++) {
 				rectArray[i][j] = new Rect3D(pointArray[i][j], pointArray[i+1][j], pointArray[i+1][j+1], pointArray[i][j+1]);
-				System.out.println(pointArray[i][j].getX());
 			}
 		}
 		
