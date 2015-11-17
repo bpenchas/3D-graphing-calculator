@@ -88,7 +88,7 @@ public class GraphicsContest extends GraphicsProgram {
 		Iterator iterator = expression.iterator();
 		while (iterator.hasNext()) {
 			Object element = iterator.next();
-			if (element.getClass() == Integer.class) {
+			if (element.getClass() == Double.class) {
 				value.push((Double) element);
 			} else {
 				((Operator)element).apply(value);
