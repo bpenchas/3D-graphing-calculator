@@ -2,6 +2,8 @@
 public enum Value implements Element {
 	CONST, X, Y;
 	
+	
+	
 	public double constValue = 0;
 	
 	
