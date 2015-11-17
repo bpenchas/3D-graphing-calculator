@@ -106,7 +106,7 @@ public class GraphicsContest extends GraphicsProgram {
 		while (iterator.hasNext()) {
 			Object element = iterator.next();
 			if (element.getClass() == Double.class) {
-				value.push((Double) element);
+				value.push(((Value) element).constValue);
 			} else {
 				((Operator)element).apply(value);
 			}
