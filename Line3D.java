@@ -10,7 +10,7 @@ public class Line3D {
 			return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
 		}
 
-		private GLine to2D() {
+		public GLine to2D() {
 			return lineFromPoints(first.to2D(), second.to2D());
 		}
 		
