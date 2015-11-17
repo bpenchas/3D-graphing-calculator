@@ -63,12 +63,25 @@ public class GraphicsContest extends GraphicsProgram {
 				wasNum = true;
 				if (nextIsNeg) {
 					result.add(-Double.parseDouble(token));
+					nextIsNeg = false;
 				} else {
 					result.add(Double.parseDouble(token));
 				}
 			} else if (token.matches("[xXyY]")) {
-				 result.add(token);
+				wasNum = true;
+				if (nextIsNeg) {
+					result.add(token);
+					result.add(-1);
+					result.add(Operator.MULTIPLY);
+					nextIsNeg = false;
+				} else {
+					result.add(token);
+				} 
 			} else {
+				if (currentOperator == Operator.SUBTRACT && !wasNum) {
+					nextIsNeg = true;
+				}
+				wasNum = false;
 				if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
 					operators.push(currentOperator);
 				} else {
