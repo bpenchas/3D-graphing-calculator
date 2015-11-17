@@ -26,9 +26,7 @@ public class Value implements Element {
 	
 	public static Value fromString(String token) {
 		if (token.matches("[0-9]+")) {
-			Value newValue = CONST;
-			newValue.constValue = Double.parseDouble(token);
-			return newValue;
+			return constValue(Double.parseDouble(token));
 		} else if (token.matches("[xX]")) {
 			return xValue();
 		} else if (token.matches("[yY]")) {
