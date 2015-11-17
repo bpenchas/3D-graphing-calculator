@@ -57,7 +57,7 @@ public class GraphicsContest extends GraphicsProgram {
 			} else if (token.matches("[x,X,y,Y]")) {
 				 result.add(token);
 			} else {
-				if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.stackPrecedence()) {
+				if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
 					operators.push(currentOperator);
 				} else {
 					while (!operators.isEmpty() && operators.peek().stackPrecedence() >= currentOperator.inputPrecedence()) {
