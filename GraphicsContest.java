@@ -83,7 +83,7 @@ public class GraphicsContest extends GraphicsProgram {
 		Stack value = new Stack();
 		Iterator iterator = expression.iterator();
 		while (iterator.hasNext()) {
-			if (iterator.next().getClass() == Operator()) {
+			if (iterator.next().getClass() == Operator) {
 				value.push(iterator.next());
 			}
 		}
