@@ -114,23 +114,7 @@ public class GraphicsContest extends GraphicsProgram {
 		
 	}
 	
-	private class Line3D {
-		private Point3D first;
-		private Point3D second;
-
-		private GLine to2D() {
-			return lineFromPoints(first.to2D(), second.to2D());
-		}
-		
-		public Line3D(Point3D first, Point3D second) {
-			this.first = first;
-			this.second = second;
-		}
-		
-		public Line3D rotate(){
-			return new Line3D(first.rotate(theta, phi), second.rotate(theta, phi));
-		}
-	}
+	
 	
 	public void run() {
 		Point3D z = new Point3D(0, 0, 10);
@@ -158,9 +142,9 @@ public class GraphicsContest extends GraphicsProgram {
 		while(true) {
 			
 			removeAll();
-			add(toPixel(xAxis.rotate().to2D()));
-			add(toPixel(yAxis.rotate().to2D()));
-			add(toPixel(zAxis.rotate().to2D()));
+			add(toPixel(xAxis.rotate(theta, phi).to2D()));
+			add(toPixel(yAxis.rotate(theta, phi).to2D()));
+			add(toPixel(zAxis.rotate(theta, phi).to2D()));
 			
 			
 			try {
