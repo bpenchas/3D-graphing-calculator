@@ -15,7 +15,7 @@ public enum Value implements Element {
 		case Y:
 			return yValue;
 		default:
-			return 0;
+			return 0.0;
 			
 	}
 	}
