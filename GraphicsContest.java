@@ -137,8 +137,8 @@ public class GraphicsContest extends GraphicsProgram {
 			for (int j = 0; j <= pointArray.length; j ++) {
 				Value.xValue = 20 * (i / (pointArray.length - 1)) - 10;
 				Value.yValue = 20 * (j / (pointArray.length - 1)) - 10;
+				pointArray[i][j] = new Point3D(Value.xValue, Value.yValue, evaluatePostfix(result));
 				
-				evaluatePostfix(result);
 			}
 		}
 		
