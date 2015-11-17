@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 
 public enum Operator {
 	ADD, SUBTRACT, MULTIPLY, DIVIDE, EXPONENT, OPAREN, CPAREN, NOOP;
@@ -42,6 +44,33 @@ public enum Operator {
 				return 0;
 			default:
 				return 0;
+				
+		}
+	}
+	
+	public void apply(Stack<Double> value) {
+		switch(this) {
+			case ADD:
+				value.push(value.pop() + value.pop());
+				break;
+			case SUBTRACT:
+				value.push(-value.pop() + value.pop());
+				break;
+			case MULTIPLY:
+				value.push(value.pop() * value.pop());
+				break;
+			case DIVIDE:
+				double first = value.pop();
+				double second = value.pop();
+				value.push(second / first);
+				break;
+			case EXPONENT:
+				double upper = value.pop();
+				double lower = value.pop();
+				value.push(Math.pow(lower, upper));
+				break;
+			default:
+				break;
 				
 		}
 	}
