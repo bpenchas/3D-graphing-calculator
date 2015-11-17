@@ -98,7 +98,7 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 	}
 	
-	private void evaluatePostfix (LinkedList<Element> expression) {
+	private void evaluatePostfix(LinkedList<Element> expression) {
 		
 		Stack<Double> value = new Stack<Double>();
 		Iterator iterator = expression.iterator();
