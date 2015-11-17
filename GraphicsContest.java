@@ -53,6 +53,8 @@ public class GraphicsContest extends GraphicsProgram {
 		Stack<Operator> operators = new Stack<Operator>();
 		boolean wasNum = false;
 		boolean nextIsNeg = false;
+		Value negOne = Value.CONST;
+		negOne.constValue = -1;
 		while(st.hasMoreTokens()) {
 			
 			String token = st.nextToken();
@@ -63,7 +65,7 @@ public class GraphicsContest extends GraphicsProgram {
 				wasNum = true;
 				result.add(Value.fromString(token));
 				if (nextIsNeg) {
-					result.add(-1);
+					result.add(negOne);
 					result.add(Operator.MULTIPLY);
 					nextIsNeg = false;
 				}
