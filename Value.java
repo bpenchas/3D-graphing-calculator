@@ -11,7 +11,7 @@ public class Value implements Element {
 	public static double yValue = 1;
 	
 	public double getValue() {
-		switch(this) {
+		switch(state) {
 		case CONST:
 			return constValue;
 		case X:
@@ -38,8 +38,16 @@ public class Value implements Element {
 		}
 	}
 	
+	public static Value constValue(double input) {
+		Value value = new Value();
+		value.constValue = input;
+		value.state = ValueEnum.CONST;
+		return value;
+		
+	}
+	
 	public String toString() {
-		switch(this) {
+		switch(state) {
 		case CONST:
 			return "CONST: " + Double.toString(constValue);
 		case X:
