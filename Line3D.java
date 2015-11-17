@@ -19,7 +19,7 @@ public class Line3D {
 			this.second = second;
 		}
 		
-		public Line3D rotate(){
+		public Line3D rotate(double theta, double phi){
 			return new Line3D(first.rotate(theta, phi), second.rotate(theta, phi));
 		}
 	}
