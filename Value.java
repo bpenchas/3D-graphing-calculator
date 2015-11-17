@@ -33,5 +33,19 @@ public enum Value implements Element {
 			return null;
 		}
 	}
+	
+	public String toString() {
+		switch(this) {
+		case CONST:
+			return "CONST: " + Double.toString(constValue);
+		case X:
+			return "X Value: " + Double.toString(xValue);
+		case Y:
+			return "Y Value: " + Double.toString(yValue);
+		default:
+			return 0.0;
+			
+		}
+	}
 
 }
