@@ -43,7 +43,7 @@ public enum Value implements Element {
 		case Y:
 			return "Y: " + Double.toString(yValue);
 		default:
-			return 0.0;
+			return "";
 			
 		}
 	}
