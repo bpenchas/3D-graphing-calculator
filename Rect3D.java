@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 import acm.graphics.GPoint;
 import acm.graphics.GPolygon;
 
@@ -24,7 +26,11 @@ public class Rect3D {
 		if (tempCornerOne == null || tempCornerTwo == null || tempCornerThree == null || tempCornerFour == null) {
 			return null;
 		}
-		return new GPolygon(new GPoint[] {tempCornerOne, tempCornerTwo, tempCornerThree, tempCornerFour});
+		GPolygon tempPolygon = new GPolygon(new GPoint[] {tempCornerOne, tempCornerTwo, tempCornerThree, tempCornerFour});
+		tempPolygon.setFilled(true);
+		tempPolygon.setFillColor(Color.RED);
+		return tempPolygon;
+		
 	}
 	
 	public Rect3D rotate(double theta, double phi){
