@@ -1,3 +1,4 @@
+import acm.graphics.GPoint;
 import acm.graphics.GPolygon;
 
 
@@ -16,8 +17,7 @@ public class Rect3D {
 	}
 	
 	private GPolygon to2D() {
-		GPolygon rect = 
-				new GPolygon(new GPoint[] {this.cornerOne.to2D(), this.cornerTwo.to2D(), this.cornerThree.to2D(), this.cornerFour.to2D()});
+		return new GPolygon(new GPoint[] {this.cornerOne.to2D(), this.cornerTwo.to2D(), this.cornerThree.to2D(), this.cornerFour.to2D()});
 	}
 
 }
