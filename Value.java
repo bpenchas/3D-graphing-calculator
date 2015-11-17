@@ -5,7 +5,7 @@ public class Value implements Element {
 		CONST, X, Y;
 	}
 	
-	private ValueEnum state = CONST;
+	private ValueEnum state = ValueEnum.CONST;
 	private double constValue = 0;
 	public static double xValue = 1;
 	public static double yValue = 1;
