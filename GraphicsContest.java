@@ -80,16 +80,18 @@ public class GraphicsContest extends GraphicsProgram {
 			} else {
 				if (currentOperator == Operator.SUBTRACT && !wasNum) {
 					nextIsNeg = true;
+				} else {
+					if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
+						operators.push(currentOperator);
+					} else {
+						while (!operators.isEmpty() && operators.peek().stackPrecedence() >= currentOperator.inputPrecedence()) {
+							result.add(operators.pop());
+						}
+						operators.push(currentOperator);
+					}
 				}
 				wasNum = false;
-				if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
-					operators.push(currentOperator);
-				} else {
-					while (!operators.isEmpty() && operators.peek().stackPrecedence() >= currentOperator.inputPrecedence()) {
-						result.add(operators.pop());
-					}
-					operators.push(currentOperator);
-				}
+				
 			}
 		
 		}
