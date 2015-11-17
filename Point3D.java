@@ -8,8 +8,7 @@ public class Point3D {
 		private double y;
 		private double z;
 		
-		public double theta = 0;
-		public double phi = 0;
+		
 		public double costheta = Math.cos(theta);
 		public double sintheta = Math.sin(theta);
 		public double cosphi = Math.cos(phi);
