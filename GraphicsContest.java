@@ -68,6 +68,7 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		
 		}
+		
 		while (!operators.isEmpty()) {
 			result.add(operators.pop());
 		}
@@ -75,6 +76,18 @@ public class GraphicsContest extends GraphicsProgram {
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next());
 		}
+	}
+	
+	private void evaluatePostfix (LinkedList expression) {
+		
+		Stack value = new Stack();
+		Iterator iterator = expression.iterator();
+		while (iterator.hasNext()) {
+			if (iterator.next().getClass() == Operator()) {
+				value.push(iterator.next());
+			}
+		}
+		
 	}
 	
 	private class Line3D {
