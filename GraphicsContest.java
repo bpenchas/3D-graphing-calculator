@@ -23,6 +23,9 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 
+	public static int APPLICATION_WIDTH = 400;
+	public static int APPLICATION_HEIGHT = 400;
+	
 	private int oldMouseX;
 	private int oldMouseY;
 	
