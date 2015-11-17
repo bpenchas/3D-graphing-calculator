@@ -20,10 +20,11 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	public void init() {
 		addMouseListeners();
+		
+		mainGraphicsContext = this;
 	}
 	
-	public static int asdf = 55;
-	public static int asdfg = 1;
+	public static GraphicsContest mainGraphicsContest;
 	
 	private int oldMouseX;
 	private int oldMouseY;
