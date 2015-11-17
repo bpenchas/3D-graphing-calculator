@@ -1,6 +1,15 @@
 
 import acm.graphics.GPoint;
 
+private double theta = 0;
+public double phi = 0;
+public double costheta = Math.cos(theta);
+public double sintheta = Math.sin(theta);
+public double cosphi = Math.cos(phi);
+public double sinphi = Math.sin(phi);
+
+public static double cameraToPlane = 45;
+public static double cameraToOrigin = 50;
 
 public class Point3D {
 		private double x;
