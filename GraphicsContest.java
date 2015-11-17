@@ -148,8 +148,8 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		}
 		
-		for (int i = 0; i <= rectArray.length; i ++) {
-			for (int j = 0; j <= rectArray.length; j ++) {
+		for (int i = 0; i < rectArray.length; i ++) {
+			for (int j = 0; j < rectArray.length; j ++) {
 				rectArray[i][j] = new Rect3D(pointArray[i][j], pointArray[i+1][j], pointArray[i+1][j+1], pointArray[i][j+1]);
 			}
 		}
@@ -162,8 +162,8 @@ public class GraphicsContest extends GraphicsProgram {
 			add(yAxis.rotate(theta, phi).to2D());
 			add(zAxis.rotate(theta, phi).to2D());
 			
-			for (int i = 0; i <= rectArray.length; i ++) {
-				for (int j = 0; j <= rectArray.length; j ++) {
+			for (int i = 0; i < rectArray.length; i ++) {
+				for (int j = 0; j < rectArray.length; j ++) {
 					add(rectArray[i][j].rotate(theta, phi).to2D());
 				}
 			}
