@@ -10,10 +10,8 @@ public enum Value implements Element {
 		switch(this) {
 		case CONST:
 			return constValue;
-		
 		case X:
 			return xValue;
-		
 		case Y:
 			return yValue;
 		default:
