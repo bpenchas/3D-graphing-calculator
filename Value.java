@@ -39,9 +39,9 @@ public enum Value implements Element {
 		case CONST:
 			return "CONST: " + Double.toString(constValue);
 		case X:
-			return "X Value: " + Double.toString(xValue);
+			return "X: " + Double.toString(xValue);
 		case Y:
-			return "Y Value: " + Double.toString(yValue);
+			return "Y: " + Double.toString(yValue);
 		default:
 			return 0.0;
 			
