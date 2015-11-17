@@ -6,7 +6,7 @@ public enum Value implements Element {
 	public static double xValue = 1;
 	public static double yValue = 1;
 	
-	public Double getValue() {
+	public double getValue() {
 		switch(this) {
 		case CONST:
 			return constValue;
