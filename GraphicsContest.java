@@ -20,11 +20,13 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	public void init() {
 		addMouseListeners();
+		APPLICATION_WIDTH = getWidth();
+		APPLICATION_HEIGHT = getHeight();
 	}
 	
 
-	public static int APPLICATION_WIDTH = 400;
-	public static int APPLICATION_HEIGHT = 400;
+	public static int APPLICATION_WIDTH;
+	public static int APPLICATION_HEIGHT;
 	
 	private int oldMouseX;
 	private int oldMouseY;
