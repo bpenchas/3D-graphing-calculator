@@ -12,6 +12,7 @@ import java.util.StringTokenizer;
 
 import acm.graphics.GLine;
 import acm.graphics.GPoint;
+import acm.graphics.GPolygon;
 import acm.io.IODialog;
 import acm.program.GraphicsProgram;
 
@@ -175,14 +176,6 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	private GLine lineFromPoints(GPoint first, GPoint second) {
 		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
-	}
-	
-	private GPoint toPixel(GPoint pt) {
-		return new GPoint((pt.getX() + 10) / 20 * getWidth(), (10 - pt.getY()) / 20 * getHeight());
-	}
-	
-	private GLine toPixel(GLine line) {
-		return lineFromPoints(toPixel(line.getStartPoint()), toPixel(line.getEndPoint()));
 	}
 	
 
