@@ -153,13 +153,13 @@ public class GraphicsContest extends GraphicsProgram {
 		while(true) {
 			
 			removeAll();
-			add(toPixel(xAxis.rotate(theta, phi).to2D()));
-			add(toPixel(yAxis.rotate(theta, phi).to2D()));
-			add(toPixel(zAxis.rotate(theta, phi).to2D()));
+			add(xAxis.rotate(theta, phi).to2D());
+			add(yAxis.rotate(theta, phi).to2D());
+			add(zAxis.rotate(theta, phi).to2D());
 			
 			for (int i = 0; i <= rectArray.length; i ++) {
 				for (int j = 0; j <= rectArray.length; j ++) {
-					add(toPixel(rectArray[i][j].rotate(theta, phi).to2D()));
+					add(rectArray[i][j].rotate(theta, phi).to2D());
 				}
 			}
 			
