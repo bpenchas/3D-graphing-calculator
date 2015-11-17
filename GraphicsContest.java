@@ -126,8 +126,7 @@ public class GraphicsContest extends GraphicsProgram {
 	public void run() {
 		
 
-		APPLICATION_WIDTH = getWidth();
-		APPLICATION_HEIGHT = getHeight();
+		
 		
 		Point3D z = new Point3D(0, 0, 10);
 		Point3D y = new Point3D(0, 10, 0);
