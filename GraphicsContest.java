@@ -158,9 +158,9 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	
 	
-	private GLine lineFromPoints(GPoint first, GPoint second) {
-		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
-	}
+//	private GLine lineFromPoints(GPoint first, GPoint second) {
+//		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
+//	}
 	
 	private GPoint toPixel(GPoint pt) {
 		return new GPoint((pt.getX() + 10) / 20 * getWidth(), (10 - pt.getY()) / 20 * getHeight());
