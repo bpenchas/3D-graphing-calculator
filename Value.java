@@ -6,7 +6,21 @@ public enum Value implements Element {
 	public static double xValue = 1;
 	public static double yValue = 1;
 	
-	
+	public Double getValue() {
+		switch(this) {
+		case CONST:
+			return constValue;
+		
+		case X:
+			return xValue;
+		
+		case Y:
+			return yValue;
+		default:
+			return 0;
+			
+	}
+	}
 	
 	public static Value fromString(String token) {
 		if (token.matches("[0-9]+")) {
