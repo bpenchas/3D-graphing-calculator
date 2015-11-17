@@ -54,6 +54,8 @@ public class GraphicsContest extends GraphicsProgram {
 			
 			if (token.matches("[0-9]+")) {
 				result.add(Integer.parseInt(token));
+			} else if (token.matches("[x,X,y,Y]")) {
+				 result.add(token);
 			} else {
 				if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.stackPrecedence()) {
 					operators.push(currentOperator);
