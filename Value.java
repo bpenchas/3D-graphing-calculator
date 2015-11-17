@@ -30,15 +30,15 @@ public class Value implements Element {
 			newValue.constValue = Double.parseDouble(token);
 			return newValue;
 		} else if (token.matches("[xX]")) {
-			return X;
+			return xValue();
 		} else if (token.matches("[yY]")) {
-			return Y;
+			return yValue();
 		} else {
 			return null;
 		}
 	}
 	
-	public static Value constValue(double input) {
+	private static Value constValue(double input) {
 		Value value = new Value();
 		value.constValue = input;
 		value.state = ValueEnum.CONST;
