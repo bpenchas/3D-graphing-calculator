@@ -1,7 +1,7 @@
 import java.util.Stack;
 
 
-public enum Operator {
+public enum Operator implements Element{
 	ADD, SUBTRACT, MULTIPLY, DIVIDE, EXPONENT, OPAREN, CPAREN, NOOP;
 	
 	public int stackPrecedence() {
