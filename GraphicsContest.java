@@ -89,7 +89,7 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 		
 		public Line3D rotate(){
-			return new Line3D(first.rotate(), second.rotate());
+			return new Line3D(first.rotate(theta, phi), second.rotate(theta, phi));
 		}
 	}
 	
@@ -111,10 +111,6 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		
 		while(true) {
-			costheta = Math.cos(theta);
-			sintheta = Math.sin(theta);
-			cosphi = Math.cos(phi);
-			sinphi = Math.sin(phi);
 			
 			removeAll();
 			add(toPixel(xAxis.rotate().to2D()));
