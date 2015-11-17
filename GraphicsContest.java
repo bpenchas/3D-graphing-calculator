@@ -53,7 +53,7 @@ public class GraphicsContest extends GraphicsProgram {
 		while(st.hasMoreTokens()) {
 			
 			String token = st.nextToken();
-			System.out.println(token);
+			//System.out.println(token);
 			Operator currentOperator = Operator.fromString(token);
 			
 			if (token.matches("[0-9]+")) {
