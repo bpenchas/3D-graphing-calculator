@@ -36,13 +36,13 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	public double theta = 0;
 	public double phi = 0;
-	private double costheta = Math.cos(theta);
-	private double sintheta = Math.sin(theta);
-	private double cosphi = Math.cos(phi);
-	private double sinphi = Math.sin(phi);
+	public double costheta = Math.cos(theta);
+	public double sintheta = Math.sin(theta);
+	public double cosphi = Math.cos(phi);
+	public double sinphi = Math.sin(phi);
 	
-	private static double cameraToPlane = 45;
-	private static double cameraToOrigin = 50;
+	public static double cameraToPlane = 45;
+	public static double cameraToOrigin = 50;
 	
 	private class Point3D {
 		private double x;
