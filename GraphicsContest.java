@@ -21,7 +21,7 @@ public class GraphicsContest extends GraphicsProgram {
 	public void init() {
 		addMouseListeners();
 		
-		mainGraphicsContext = this;
+		mainGraphicsContest = this;
 	}
 	
 	public static GraphicsContest mainGraphicsContest;
