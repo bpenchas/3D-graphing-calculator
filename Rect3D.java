@@ -16,7 +16,7 @@ public class Rect3D {
 		
 	}
 	
-	private GPolygon to2D() {
+	public GPolygon to2D() {
 		return new GPolygon(new GPoint[] {this.cornerOne.to2D(), this.cornerTwo.to2D(), this.cornerThree.to2D(), this.cornerFour.to2D()});
 	}
 	
