@@ -133,6 +133,11 @@ public class GraphicsContest extends GraphicsProgram {
 //		Line3D test3 = new Line3D(x, y);
 		
 		evaluate();
+		for (int i = -10; i <= 10; i ++) {
+			for (int j = -10; j <= 10; j ++) {
+				
+			}
+		}
 		for (Value.xValue = -10; Value.xValue <= 10; Value.xValue ++) {
 			for (Value.yValue = -10; Value.yValue <= 10; Value.yValue ++) {
 				evaluatePostfix(result);
