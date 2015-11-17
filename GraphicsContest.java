@@ -110,7 +110,7 @@ public class GraphicsContest extends GraphicsProgram {
 				((Operator) element).apply(value);
 			}
 		}
-		System.out.println(value.pop());
+		
 		
 	}
 	
