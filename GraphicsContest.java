@@ -41,7 +41,7 @@ public class GraphicsContest extends GraphicsProgram {
 		oldMouseY = e.getY();
 	}
 	
-	private LinkedList result = new LinkedList();
+	private LinkedList<Element> result = new LinkedList<Element>();
 	
 	
 	private void evaluate() {
@@ -59,25 +59,17 @@ public class GraphicsContest extends GraphicsProgram {
 			//System.out.println(token);
 			Operator currentOperator = Operator.fromString(token);
 			
-			if (token.matches("[0-9]+")) {
+			if (currentOperator == Operator.NOOP) {
 				wasNum = true;
+				result.add(Value.fromString(token));
 				if (nextIsNeg) {
-					result.add(-Double.parseDouble(token));
-					nextIsNeg = false;
-				} else {
-					result.add(Double.parseDouble(token));
-				}
-			} else if (token.matches("[xXyY]")) {
-				wasNum = true;
-				if (nextIsNeg) {
-					result.add(token);
 					result.add(-1);
 					result.add(Operator.MULTIPLY);
 					nextIsNeg = false;
-				} else {
-					result.add(token);
-				} 
-			} else {
+				}
+				
+			}
+			 else {
 				if (currentOperator == Operator.SUBTRACT && !wasNum) {
 					nextIsNeg = true;
 				} else {
