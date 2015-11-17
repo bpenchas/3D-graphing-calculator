@@ -9,10 +9,10 @@ public class Point3D {
 		private double z;
 		
 		
-		public double costheta = Math.cos(theta);
-		public double sintheta = Math.sin(theta);
-		public double cosphi = Math.cos(phi);
-		public double sinphi = Math.sin(phi);
+		private double costheta;
+		private double sintheta;
+		private double cosphi;
+		private double sinphi;
 
 		public static double cameraToPlane = 45;
 		public static double cameraToOrigin = 50;
@@ -51,7 +51,11 @@ public class Point3D {
 			return new GPoint(x * cameraToPlane / (cameraToOrigin - z), y * cameraToPlane / (cameraToOrigin - z));
 		}
 		
-		public Point3D rotate() {
+		public Point3D rotate(double theta, double phi) {
+			costheta = Math.cos(theta);
+			sintheta = Math.sin(theta);
+			cosphi = Math.cos(phi);
+			sinphi = Math.sin(phi);
 			return new Point3D(x * costheta - z * sintheta, x * -sintheta * sinphi + y * cosphi - z* sinphi * costheta, x* sintheta * cosphi + y * sinphi + z * costheta * cosphi);
 		}
 	}
