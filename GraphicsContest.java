@@ -24,7 +24,7 @@ public class GraphicsContest extends GraphicsProgram {
 	public double theta = 0;
 	public double phi = 0;
 	
-	String DELIMITERS = "+-*/^()";
+	String DELIMITERS = "+-*/^()xXyY";
 	public void mousePressed(MouseEvent e) {
 		oldMouseX = e.getX();
 		oldMouseY = e.getY();
