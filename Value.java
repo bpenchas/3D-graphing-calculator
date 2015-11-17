@@ -17,7 +17,7 @@ public enum Value implements Element {
 		default:
 			return 0.0;
 			
-	}
+		}
 	}
 	
 	public static Value fromString(String token) {
