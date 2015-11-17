@@ -104,7 +104,7 @@ public class GraphicsContest extends GraphicsProgram {
 		Stack<Double> value = new Stack<Double>();
 		Iterator iterator = expression.iterator();
 		while (iterator.hasNext()) {
-			Element element = iterator.next();
+			Element element = (Element) iterator.next();
 			if (element.getClass() == Value.class) {
 				value.push(((Value) element).constValue);
 			} else {
