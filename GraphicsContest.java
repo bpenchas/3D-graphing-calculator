@@ -99,16 +99,16 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 	}
 	
-	private void evaluatePostfix (LinkedList expression) {
+	private void evaluatePostfix (LinkedList<Element> expression) {
 		
 		Stack<Double> value = new Stack<Double>();
 		Iterator iterator = expression.iterator();
 		while (iterator.hasNext()) {
-			Object element = iterator.next();
-			if (element.getClass() == Double.class) {
+			Element element = iterator.next();
+			if (element.getClass() == Value.class) {
 				value.push(((Value) element).constValue);
 			} else {
-				((Operator)element).apply(value);
+				((Operator) element).apply(value);
 			}
 		}
 		System.out.println(value.pop());
