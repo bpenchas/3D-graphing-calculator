@@ -42,6 +42,8 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 	private LinkedList result = new LinkedList();
+	
+	
 	private void evaluate() {
 		IODialog dialog = getDialog();
 		String equation = dialog.readLine("Enter an equation:");
@@ -49,7 +51,8 @@ public class GraphicsContest extends GraphicsProgram {
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
 		
 		Stack<Operator> operators = new Stack<Operator>();
-		
+		boolean wasNum = false;
+		boolean nextIsNeg = false;
 		while(st.hasMoreTokens()) {
 			
 			String token = st.nextToken();
@@ -57,8 +60,13 @@ public class GraphicsContest extends GraphicsProgram {
 			Operator currentOperator = Operator.fromString(token);
 			
 			if (token.matches("[0-9]+")) {
-				result.add(Double.parseDouble(token));
-			} else if (token.matches("[x,X,y,Y]")) {
+				wasNum = true;
+				if (nextIsNeg) {
+					result.add(-Double.parseDouble(token));
+				} else {
+					result.add(Double.parseDouble(token));
+				}
+			} else if (token.matches("[xXyY]")) {
 				 result.add(token);
 			} else {
 				if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
