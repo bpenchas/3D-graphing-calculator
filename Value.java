@@ -1,5 +1,5 @@
 
-public enum Value implements Element {
+public class Value implements Element {
 	CONST, X, Y;
 	
 	private double constValue = 0;
