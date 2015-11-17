@@ -52,7 +52,7 @@ public class GraphicsContest extends GraphicsProgram {
 			System.out.println(token);
 			Operator currentOperator = Operator.fromString(token);
 			
-			if (token.matches("[0-9]+") || token.matches("[x,X,y,Y]")) {
+			if (token.matches("[0-9]+") {
 				result.add(Integer.parseInt(token));
 			} else {
 				if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.stackPrecedence()) {
