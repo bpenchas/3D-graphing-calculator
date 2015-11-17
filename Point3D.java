@@ -48,6 +48,7 @@ public class Point3D {
 		}
 		
 		public GPoint to2D() {
+			if (z > cameraToOrigin) return null;
 			return new GPoint((x * cameraToPlane / (cameraToOrigin - z)  + 10) / 20 *GraphicsContest.mainGraphicsContest.getWidth(), (10 - y * cameraToPlane / (cameraToOrigin - z)) / 20 * GraphicsContest.mainGraphicsContest.getHeight() );
 		}
 		
