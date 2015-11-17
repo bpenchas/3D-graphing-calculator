@@ -115,7 +115,8 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 	
-	private Point3D[][] points = new Point3D[21][21];
+	private Point3D[][] pointArray = new Point3D[21][21];
+	private Rect3D[][] rectArray = new Rect3D[20][20];
 	
 	public void run() {
 		Point3D z = new Point3D(0, 0, 10);
