@@ -28,7 +28,7 @@ public class Rect3D {
 		}
 		GPolygon tempPolygon = new GPolygon(new GPoint[] {tempCornerOne, tempCornerTwo, tempCornerThree, tempCornerFour});
 		tempPolygon.setFilled(true);
-		tempPolygon.setFillColor(new Color(255 / cornerOne.getZ(), 255 / cornerOne.getZ(), 255 / cornerOne.getZ()));
+		tempPolygon.setFillColor(new Color(255 / (int) cornerOne.getZ(), 255 / (int) cornerOne.getZ(), 255 / (int) cornerOne.getZ()));
 		return tempPolygon;
 		
 	}
