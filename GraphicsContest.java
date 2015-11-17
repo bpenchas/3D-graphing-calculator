@@ -5,11 +5,15 @@
  */
 
 import java.awt.event.MouseEvent;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Stack;
+import java.util.StringTokenizer;
 
-import acm.program.*;
-import acm.graphics.*;
+import acm.graphics.GLine;
+import acm.graphics.GPoint;
 import acm.io.IODialog;
-import java.util.*;
+import acm.program.GraphicsProgram;
 
 public class GraphicsContest extends GraphicsProgram {
 	
@@ -80,11 +84,14 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	private void evaluatePostfix (LinkedList expression) {
 		
-		Stack value = new Stack();
+		Stack<Double> value = new Stack<Double>();
 		Iterator iterator = expression.iterator();
 		while (iterator.hasNext()) {
-			if (iterator.next().getClass() != Integer.class) {
-				value.push(iterator.next());
+			Object element = iterator.next();
+			if (element.getClass() == Integer.class) {
+				value.push((Double) element);
+			} else {
+				((Operator)element).apply(value);
 			}
 		}
 		
