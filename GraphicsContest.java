@@ -41,13 +41,13 @@ public class GraphicsContest extends GraphicsProgram {
 		oldMouseY = e.getY();
 	}
 	
-	
+	private LinkedList result = new LinkedList();
 	private void evaluate() {
 		IODialog dialog = getDialog();
 		String equation = dialog.readLine("Enter an equation:");
 		
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
-		LinkedList result = new LinkedList();
+		
 		Stack<Operator> operators = new Stack<Operator>();
 		
 		while(st.hasMoreTokens()) {
@@ -94,6 +94,7 @@ public class GraphicsContest extends GraphicsProgram {
 				((Operator)element).apply(value);
 			}
 		}
+		System.out.println(value.pop());
 		
 	}
 	
@@ -130,6 +131,7 @@ public class GraphicsContest extends GraphicsProgram {
 		Line3D test3 = new Line3D(x, y);
 		
 		evaluate();
+		evaluatePostfix(result);
 		
 		
 		while(true) {
