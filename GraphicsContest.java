@@ -68,16 +68,16 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == expressionField) {
-			while(true) graph(expressionField.getText());
+			equation = expressionField.getText();
 		} else if (e.getSource() == clearButton) {
-			println("Clear All");
+			equation = "";
 		} else if (e.getSource() == addButton) {
-			graph(expressionField.getText());
+			equation = expressionField.getText();
 		}
 	}
 	
-	
-	private void evaluate(String equation) {
+	private String equation;
+	private void evaluate() {
 //		IODialog dialog = getDialog();
 //		String equation = dialog.readLine("Enter an equation:");
 		
@@ -152,9 +152,9 @@ public class GraphicsContest extends GraphicsProgram {
 	private Point3D[][] pointArray = new Point3D[21][21];
 	private Rect3D[][] rectArray = new Rect3D[20][20];
 	
-	private Line3D xAxis;
-	private Line3D yAxis;
-	private Line3D zAxis;
+//	private Line3D xAxis;
+//	private Line3D yAxis;
+//	private Line3D zAxis;
 	
 	public void run() {
 		
@@ -178,12 +178,7 @@ public class GraphicsContest extends GraphicsProgram {
 //		Line3D test2 = new Line3D(y, z);
 //		Line3D test3 = new Line3D(x, y);
 		
-		
-		
-	}
-	
-	public void graph(String toGraph) {
-		evaluate(toGraph);
+		evaluate();
 		for (int i = 0; i < pointArray.length; i ++) {
 			for (int j = 0; j < pointArray.length; j ++) {
 				Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
@@ -203,16 +198,16 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		
 		
-//		while(true) {
+		while(true) {
 			
-			Point3D z = new Point3D(0, 0, 10);
-			Point3D y = new Point3D(0, 10, 0);
-			Point3D x = new Point3D(10, 0, 0);
-			Point3D origin = new Point3D(0, 0, 0);
-			
-			Line3D xAxis = new Line3D(origin, x);
-			Line3D yAxis = new Line3D(origin, y);
-			Line3D zAxis = new Line3D(origin, z);
+//			Point3D z = new Point3D(0, 0, 10);
+//			Point3D y = new Point3D(0, 10, 0);
+//			Point3D x = new Point3D(10, 0, 0);
+//			Point3D origin = new Point3D(0, 0, 0);
+//			
+//			Line3D xAxis = new Line3D(origin, x);
+//			Line3D yAxis = new Line3D(origin, y);
+//			Line3D zAxis = new Line3D(origin, z);
 			
 			removeAll();
 			add(xAxis.rotate(theta, phi).to2D());
@@ -245,9 +240,9 @@ public class GraphicsContest extends GraphicsProgram {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
 		
 	}
-	
 	
 	private GLine lineFromPoints(GPoint first, GPoint second) {
 		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
