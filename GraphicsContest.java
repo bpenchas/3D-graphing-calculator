@@ -177,7 +177,8 @@ public class GraphicsContest extends GraphicsProgram {
 //		Line3D test = new Line3D(x, z);
 //		Line3D test2 = new Line3D(y, z);
 //		Line3D test3 = new Line3D(x, y);
-		while (equation == "") {
+		while (true) {
+			if (equation == "") {
 			evaluate();
 			for (int i = 0; i < pointArray.length; i ++) {
 				for (int j = 0; j < pointArray.length; j ++) {
@@ -242,6 +243,8 @@ public class GraphicsContest extends GraphicsProgram {
 				}
 			}
 		}
+		}
+		
 		
 		
 	}
