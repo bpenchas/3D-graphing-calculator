@@ -33,9 +33,9 @@ public class GraphicsContest extends GraphicsProgram {
 //		add(expressionField, NORTH);
 //		expressionField.addActionListener(this);
 		addButton = new JButton("Zoom Out");
-//		clearButton = new JButton("Clear");
+		clearButton = new JButton("Zoom In");
 		add(addButton, NORTH);
-//		add(clearButton, SOUTH);
+		add(clearButton, NORTH);
 		addActionListeners();
 	}
 	
@@ -74,6 +74,8 @@ public class GraphicsContest extends GraphicsProgram {
 //		} else
 		if (e.getSource() == addButton) {
 			Point3D.cameraToOrigin += 10;
+		} else if (e.getSource() == clearButton) {
+			Point3D.cameraToOrigin += -10;
 		}
 	}
 	
