@@ -29,14 +29,14 @@ public class GraphicsContest extends GraphicsProgram {
 		mainGraphicsContest = this;
 		
 //		expressionField = new JTextField(10);
-//		add(new JLabel("Name"), NORTH);
+		add(new JLabel("Zoom Out"), NORTH);
 //		add(expressionField, NORTH);
 //		expressionField.addActionListener(this);
-//		addButton = new JButton("Graph");
+		addButton = new JButton("Graph");
 //		clearButton = new JButton("Clear");
-//		add(addButton, SOUTH);
+		add(addButton, SOUTH);
 //		add(clearButton, SOUTH);
-//		addActionListeners();
+		addActionListeners();
 	}
 	
 	private JTextField expressionField;
@@ -66,15 +66,16 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	private LinkedList<Element> result = new LinkedList<Element>();
 	
-//	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) {
 //		if (e.getSource() == expressionField) {
 //			equation = expressionField.getText();
 //		} else if (e.getSource() == clearButton) {
 //			equation = "";
-//		} else if (e.getSource() == addButton) {
-//			equation = expressionField.getText();
-//		}
-//	}
+//		} else
+		if (e.getSource() == addButton) {
+			
+		}
+	}
 	
 	private String equation = "";
 	private void evaluate() {
