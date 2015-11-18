@@ -68,7 +68,7 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == expressionField) {
-			graph(expressionField.getText());
+			while(true) graph(expressionField.getText());
 		} else if (e.getSource() == clearButton) {
 			println("Clear All");
 		} else if (e.getSource() == addButton) {
@@ -203,7 +203,7 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		
 		
-		while(true) {
+//		while(true) {
 			
 			Point3D z = new Point3D(0, 0, 10);
 			Point3D y = new Point3D(0, 10, 0);
@@ -245,7 +245,7 @@ public class GraphicsContest extends GraphicsProgram {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+		
 	}
 	
 	
