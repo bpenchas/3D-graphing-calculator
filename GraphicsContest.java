@@ -166,20 +166,20 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		while(true) {
 			
-//			removeAll();
-//			add(xAxis.rotate(theta, phi).to2D());
-//			add(yAxis.rotate(theta, phi).to2D());
-//			add(zAxis.rotate(theta, phi).to2D());
+			removeAll();
+			add(xAxis.rotate(theta, phi).to2D());
+			add(yAxis.rotate(theta, phi).to2D());
+			add(zAxis.rotate(theta, phi).to2D());
 			
-			xAxis.to2D().setStartPoint(xAxis.rotate(theta, phi).to2D().getStartPoint().getX(), xAxis.rotate(theta, phi).to2D().getStartPoint().getY());
-			xAxis.to2D().setEndPoint(xAxis.rotate(theta, phi).to2D().getEndPoint().getX(), xAxis.rotate(theta, phi).to2D().getEndPoint().getY());
-			
-			yAxis.to2D().setStartPoint(yAxis.rotate(theta, phi).to2D().getStartPoint().getX(), yAxis.rotate(theta, phi).to2D().getStartPoint().getY());
-			yAxis.to2D().setEndPoint(yAxis.rotate(theta, phi).to2D().getEndPoint().getX(), yAxis.rotate(theta, phi).to2D().getEndPoint().getY());
-			
-			zAxis.to2D().setStartPoint(zAxis.rotate(theta, phi).to2D().getStartPoint().getX(), zAxis.rotate(theta, phi).to2D().getStartPoint().getY());
-			zAxis.to2D().setEndPoint(zAxis.rotate(theta, phi).to2D().getEndPoint().getX(), zAxis.rotate(theta, phi).to2D().getEndPoint().getY());
-			
+//			xAxis.to2D().setStartPoint(xAxis.rotate(theta, phi).to2D().getStartPoint().getX(), xAxis.rotate(theta, phi).to2D().getStartPoint().getY());
+//			xAxis.to2D().setEndPoint(xAxis.rotate(theta, phi).to2D().getEndPoint().getX(), xAxis.rotate(theta, phi).to2D().getEndPoint().getY());
+//			
+//			yAxis.to2D().setStartPoint(yAxis.rotate(theta, phi).to2D().getStartPoint().getX(), yAxis.rotate(theta, phi).to2D().getStartPoint().getY());
+//			yAxis.to2D().setEndPoint(yAxis.rotate(theta, phi).to2D().getEndPoint().getX(), yAxis.rotate(theta, phi).to2D().getEndPoint().getY());
+//			
+//			zAxis.to2D().setStartPoint(zAxis.rotate(theta, phi).to2D().getStartPoint().getX(), zAxis.rotate(theta, phi).to2D().getStartPoint().getY());
+//			zAxis.to2D().setEndPoint(zAxis.rotate(theta, phi).to2D().getEndPoint().getX(), zAxis.rotate(theta, phi).to2D().getEndPoint().getY());
+//			
 			
 			for (int i = 0; i < rectArray.length; i ++) {
 				for (int j = 0; j < rectArray.length; j ++) {
