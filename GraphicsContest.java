@@ -312,7 +312,7 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		
 		
-	}
+	
 	
 	private GLine lineFromPoints(GPoint first, GPoint second) {
 		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
