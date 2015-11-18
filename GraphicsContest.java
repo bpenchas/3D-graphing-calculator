@@ -70,7 +70,7 @@ public class GraphicsContest extends GraphicsProgram {
 		if (e.getSource() == expressionField) {
 			equation = expressionField.getText();
 		} else if (e.getSource() == clearButton) {
-			equation = "";
+			equation = " ";
 		} else if (e.getSource() == addButton) {
 			equation = expressionField.getText();
 		}
