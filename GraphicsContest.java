@@ -158,6 +158,9 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		}
 		
+		add(xAxis.to2D());
+		add(yAxis.to2D());
+		add(zAxis.to2D());
 		
 		while(true) {
 			
@@ -166,9 +169,7 @@ public class GraphicsContest extends GraphicsProgram {
 //			add(yAxis.rotate(theta, phi).to2D());
 //			add(zAxis.rotate(theta, phi).to2D());
 			
-			add(xAxis.to2D());
-			add(yAxis.to2D());
-			add(zAxis.to2D());
+			
 			
 			for (int i = 0; i < rectArray.length; i ++) {
 				for (int j = 0; j < rectArray.length; j ++) {
