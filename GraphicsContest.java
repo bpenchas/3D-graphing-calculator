@@ -68,7 +68,7 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == expressionField) {
-			
+			graph(expressionField.getText());
 		} else if (e.getSource() == clearButton) {
 			println("Clear All");
 		} else if (e.getSource() == addButton) {
