@@ -76,10 +76,10 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 	}
 	
-	private String equation = "";
+//	private String equation = "";
 	private void evaluate() {
-//		IODialog dialog = getDialog();
-//		String equation = dialog.readLine("Enter an equation:");
+		IODialog dialog = getDialog();
+		String equation = dialog.readLine("Enter an equation:");
 		
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
 		
