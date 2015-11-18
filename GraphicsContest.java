@@ -72,7 +72,7 @@ public class GraphicsContest extends GraphicsProgram {
 		} else if (e.getSource() == clearButton) {
 			println("Clear All");
 		} else if (e.getSource() == addButton) {
-			println("Graph " + expressionField.getText());
+			graph(expressionField.getText());
 		}
 	}
 	
