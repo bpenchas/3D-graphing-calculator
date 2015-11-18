@@ -158,9 +158,9 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		}
 		
-		add(xAxis.to2D());
-		add(yAxis.to2D());
-		add(zAxis.to2D());
+//		add(xAxis.to2D());
+//		add(yAxis.to2D());
+//		add(zAxis.to2D());
 		
 		
 		
