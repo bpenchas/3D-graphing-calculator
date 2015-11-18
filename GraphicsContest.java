@@ -34,7 +34,7 @@ public class GraphicsContest extends GraphicsProgram {
 //		expressionField.addActionListener(this);
 		addButton = new JButton("Graph");
 //		clearButton = new JButton("Clear");
-		add(addButton, SOUTH);
+		add(addButton, NORTH);
 //		add(clearButton, SOUTH);
 		addActionListeners();
 	}
