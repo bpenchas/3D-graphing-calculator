@@ -77,9 +77,9 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 	
-	private void evaluate() {
-		IODialog dialog = getDialog();
-		String equation = dialog.readLine("Enter an equation:");
+	private void evaluate(String equation) {
+//		IODialog dialog = getDialog();
+//		String equation = dialog.readLine("Enter an equation:");
 		
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
 		
@@ -152,6 +152,10 @@ public class GraphicsContest extends GraphicsProgram {
 	private Point3D[][] pointArray = new Point3D[21][21];
 	private Rect3D[][] rectArray = new Rect3D[20][20];
 	
+	private Line3D xAxis;
+	private Line3D yAxis;
+	private Line3D zAxis;
+	
 	public void run() {
 		
 
@@ -175,7 +179,11 @@ public class GraphicsContest extends GraphicsProgram {
 //		Line3D test3 = new Line3D(x, y);
 		
 		
-		evaluate();
+		
+	}
+	
+	public void graph(String toGraph) {
+		evaluate(toGraph);
 		for (int i = 0; i < pointArray.length; i ++) {
 			for (int j = 0; j < pointArray.length; j ++) {
 				Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
@@ -230,7 +238,6 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		}
 	}
-	
 	
 	
 	private GLine lineFromPoints(GPoint first, GPoint second) {
