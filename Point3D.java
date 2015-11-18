@@ -14,8 +14,8 @@ public class Point3D {
 		private double cosphi;
 		private double sinphi;
 
-		public static double cameraToPlane = 45;
-		public static double cameraToOrigin = 50;
+		public double cameraToPlane = 45;
+		public double cameraToOrigin = 50;
 		
 		public double getX() {
 			return x;
