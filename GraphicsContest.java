@@ -73,7 +73,7 @@ public class GraphicsContest extends GraphicsProgram {
 //			equation = "";
 //		} else
 		if (e.getSource() == addButton) {
-			
+			Point3D.cameraToPlane = 0;
 		}
 	}
 	
