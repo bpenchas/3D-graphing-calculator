@@ -4,11 +4,16 @@
  * --------------------------
  */
 
+import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Stack;
 import java.util.StringTokenizer;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 import acm.graphics.GLine;
 import acm.graphics.GPoint;
@@ -22,7 +27,21 @@ public class GraphicsContest extends GraphicsProgram {
 		addMouseListeners();
 		
 		mainGraphicsContest = this;
+		
+		expressionField = new JTextField(10);
+		add(new JLabel("Name"), NORTH);
+		add(expressionField, NORTH);
+		expressionField.addActionListener(this);
+		addButton = new JButton("Graph");
+		clearButton = new JButton("Clear");
+		add(addButton, SOUTH);
+		add(clearButton, SOUTH);
+		addActionListeners();
 	}
+	
+	private JTextField expressionField;
+	private JButton addButton;
+	private JButton clearButton;
 	
 	public static GraphicsContest mainGraphicsContest;
 	
@@ -46,6 +65,16 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 	private LinkedList<Element> result = new LinkedList<Element>();
+	
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == expressionField) {
+			
+		} else if (e.getSource() == clearButton) {
+			println("Clear All");
+		} else if (e.getSource() == addButton) {
+			println("Graph " + expressionField.getText());
+		}
+	}
 	
 	
 	private void evaluate() {
@@ -137,6 +166,10 @@ public class GraphicsContest extends GraphicsProgram {
 		Line3D yAxis = new Line3D(origin, y);
 		Line3D zAxis = new Line3D(origin, z);
 		
+		add(xAxis.to2D());
+		add(yAxis.to2D());
+		add(zAxis.to2D());
+		
 //		Line3D test = new Line3D(x, z);
 //		Line3D test2 = new Line3D(y, z);
 //		Line3D test3 = new Line3D(x, y);
@@ -158,9 +191,7 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		}
 		
-//		add(xAxis.to2D());
-//		add(yAxis.to2D());
-//		add(zAxis.to2D());
+
 		
 		
 		
