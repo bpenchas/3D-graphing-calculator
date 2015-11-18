@@ -205,6 +205,15 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		while(true) {
 			
+			Point3D z = new Point3D(0, 0, 10);
+			Point3D y = new Point3D(0, 10, 0);
+			Point3D x = new Point3D(10, 0, 0);
+			Point3D origin = new Point3D(0, 0, 0);
+			
+			Line3D xAxis = new Line3D(origin, x);
+			Line3D yAxis = new Line3D(origin, y);
+			Line3D zAxis = new Line3D(origin, z);
+			
 			removeAll();
 			add(xAxis.rotate(theta, phi).to2D());
 			add(yAxis.rotate(theta, phi).to2D());
