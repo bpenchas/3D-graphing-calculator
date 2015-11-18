@@ -192,7 +192,7 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 			
 			try {
-				Thread.sleep(16);
+				Thread.sleep(24);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
