@@ -43,7 +43,8 @@ public class Rect3D {
 	}
 	
 	public void rotate(double theta, double phi){
-		cornerOne2D.setLocation(cornerOne.rotate(theta, phi).to2D());
+		//cornerOne2D.setLocation(cornerOne.rotate(theta, phi).to2D());
+		cornerOne2D.setLocation(0, 0);
 		cornerTwo2D.setLocation(cornerTwo.rotate(theta, phi).to2D());
 		cornerThree2D.setLocation(cornerThree.rotate(theta, phi).to2D());
 		cornerFour2D.setLocation(cornerFour.rotate(theta, phi).to2D());
