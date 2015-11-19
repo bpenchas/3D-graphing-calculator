@@ -1,7 +1,7 @@
 
 public class Value implements Element {
 	
-	private enum ValueEnum {
+	public enum ValueEnum {
 		CONST, X, Y;
 	}
 	
