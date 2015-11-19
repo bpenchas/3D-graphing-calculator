@@ -201,7 +201,7 @@ public class GraphicsContest extends GraphicsProgram {
 //				Line3D yAxis = new Line3D(origin, y);
 //				Line3D zAxis = new Line3D(origin, z);
 			
-			removeAll();
+			//removeAll();
 			xAxis.rotate(theta, phi);
 			yAxis.rotate(theta, phi);
 			zAxis.rotate(theta, phi);
@@ -218,7 +218,7 @@ public class GraphicsContest extends GraphicsProgram {
 //				zAxis.to2D().setStartPoint(zAxis.rotate(theta, phi).to2D().getStartPoint().getX(), zAxis.rotate(theta, phi).to2D().getStartPoint().getY());
 //				zAxis.to2D().setEndPoint(zAxis.rotate(theta, phi).to2D().getEndPoint().getX(), zAxis.rotate(theta, phi).to2D().getEndPoint().getY());
 //				
-			
+			/*
 			for (int i = 0; i < rectArray.length; i ++) {
 				for (int j = 0; j < rectArray.length; j ++) {
 					GPolygon temp = rectArray[i][j].rotate(theta, phi).to2D();
@@ -228,6 +228,7 @@ public class GraphicsContest extends GraphicsProgram {
 					
 				}
 			}
+			*/
 			
 			try {
 				Thread.sleep(24);
