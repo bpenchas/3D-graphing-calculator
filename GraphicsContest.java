@@ -185,10 +185,6 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		for (int i = 0; i < resolution; i ++) {
 			for (int j = 0; j < resolution; j ++) {
-				Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
-				Value.yValue = 20 * (j / (pointArray.length - 1.0)) - 10;
-				pointArray[i][j] = new Point3D(Value.xValue, evaluatePostfix(result), Value.yValue);
-				
 				lineArray[i] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
 				add(temp);
 			}
