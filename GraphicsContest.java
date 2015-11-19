@@ -151,9 +151,9 @@ public class GraphicsContest extends GraphicsProgram {
 		
 	}
 	
-	
-	private Point3D[][] pointArray = new Point3D[21][21];
-	private Rect3D[][] rectArray = new Rect3D[20][20];
+	private static final int resolution = 20;
+	private Point3D[][] pointArray = new Point3D[resolution + 1][resolution + 1];
+	private Line3D[] lineArray = new Line3D[2 * resolution * resolution + resolution * 2];
 	
 //	private Line3D xAxis;
 //	private Line3D yAxis;
