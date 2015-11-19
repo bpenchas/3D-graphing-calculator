@@ -153,7 +153,7 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	private static final int resolution = 20;
 	private Point3D[][] pointArray = new Point3D[resolution + 1][resolution + 1];
-	private Line3D[] lineArray = new Line3D[2 * resolution * resolution + resolution * 2];
+	private Line3D[][][] lineArray = new Line3D[resolution][resolution][2];
 	
 //	private Line3D xAxis;
 //	private Line3D yAxis;
@@ -180,6 +180,17 @@ public class GraphicsContest extends GraphicsProgram {
 				Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
 				Value.yValue = 20 * (j / (pointArray.length - 1.0)) - 10;
 				pointArray[i][j] = new Point3D(Value.xValue, evaluatePostfix(result), Value.yValue);
+			}
+		}
+		
+		for (int i = 0; i < resolution; i ++) {
+			for (int j = 0; j < resolution; j ++) {
+				Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
+				Value.yValue = 20 * (j / (pointArray.length - 1.0)) - 10;
+				pointArray[i][j] = new Point3D(Value.xValue, evaluatePostfix(result), Value.yValue);
+				
+				lineArray[i] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
+				add(temp);
 			}
 		}
 		
