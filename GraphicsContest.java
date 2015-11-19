@@ -151,7 +151,7 @@ public class GraphicsContest extends GraphicsProgram {
 		
 	}
 	
-	private static final int resolution = 20;
+	private static final int resolution = 100;
 	private Point3D[][] pointArray = new Point3D[resolution + 1][resolution + 1];
 	private Line3D[][][] lineArray = new Line3D[resolution][resolution][2];
 	
