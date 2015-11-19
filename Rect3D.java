@@ -40,7 +40,11 @@ public class Rect3D {
 	}
 	
 	public void rotate(double theta, double phi){
-		return new Rect3D(cornerOne.rotate(theta, phi), cornerTwo.rotate(theta, phi), cornerThree.rotate(theta, phi), cornerFour.rotate(theta, phi));
+//		return new Rect3D(cornerOne.rotate(theta, phi), cornerTwo.rotate(theta, phi), cornerThree.rotate(theta, phi), cornerFour.rotate(theta, phi));
+		GPoint tempCornerOne2D = cornerOne.rotate(theta, phi).to2D();
+		GPoint tempCornerTwo2D = cornerTwo.rotate(theta, phi).to2D();
+		GPoint tempCornerThree2D = cornerThree.rotate(theta, phi).to2D();
+		GPoint tempCornerFour2D = cornerFour.rotate(theta, phi).to2D();
 	}
 
 }
