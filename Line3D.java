@@ -22,7 +22,10 @@ public class Line3D {
 			this.line2D = lineFromPoints(first.to2D(), second.to2D());
 		}
 		
-		public Line3D rotate(double theta, double phi){
-			return new Line3D(first.rotate(theta, phi), second.rotate(theta, phi));
+		public void rotate(double theta, double phi) {
+			GPoint firstPt = first.rotate(theta, phi).to2D();
+			GPoint secondPt = second.rotate(theta, phi).to2D();
+			line2D.setStartPoint(firstPt.getX(), firstPt.getY());
+			line2D.setEndPoint(secondPt.getX(), secondPt.getY());
 		}
 	}
