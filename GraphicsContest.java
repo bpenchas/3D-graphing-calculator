@@ -161,9 +161,6 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	public void run() {
 		
-
-		
-		
 		Point3D z = new Point3D(0, 0, 10);
 		Point3D y = new Point3D(0, 10, 0);
 		Point3D x = new Point3D(10, 0, 0);
@@ -192,11 +189,7 @@ public class GraphicsContest extends GraphicsProgram {
 				rectArray[i][j] = new Rect3D(pointArray[i][j], pointArray[i+1][j], pointArray[i+1][j+1], pointArray[i][j+1]);
 			}
 		}
-	
-
-	
-	
-	
+		
 		while(true) {
 			
 //				Point3D z = new Point3D(0, 0, 10);
@@ -209,9 +202,6 @@ public class GraphicsContest extends GraphicsProgram {
 //				Line3D zAxis = new Line3D(origin, z);
 			
 			removeAll();
-			add(xAxis.rotate(theta, phi).to2D());
-			add(yAxis.rotate(theta, phi).to2D());
-			add(zAxis.rotate(theta, phi).to2D());
 			
 //				xAxis.to2D().setStartPoint(xAxis.rotate(theta, phi).to2D().getStartPoint().getX(), xAxis.rotate(theta, phi).to2D().getStartPoint().getY());
 //				xAxis.to2D().setEndPoint(xAxis.rotate(theta, phi).to2D().getEndPoint().getX(), xAxis.rotate(theta, phi).to2D().getEndPoint().getY());
