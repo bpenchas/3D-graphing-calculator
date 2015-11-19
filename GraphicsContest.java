@@ -185,8 +185,10 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		for (int i = 0; i < resolution; i ++) {
 			for (int j = 0; j < resolution; j ++) {
-				lineArray[i] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
-				add(temp);
+				lineArray[i][j][0] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
+				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j]);
+				add(lineArray[i][j][0].to2D());
+				add(lineArray[i][j][1].to2D());
 			}
 		}
 		
