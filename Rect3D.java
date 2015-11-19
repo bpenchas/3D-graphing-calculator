@@ -24,7 +24,6 @@ public class Rect3D {
 		this.cornerTwo2D = cornerTwo.to2D();
 		this.cornerThree2D = cornerThree.to2D();
 		this.cornerFour2D = cornerFour.to2D();
-		
 	}
 	
 	public GPolygon to2D() {
