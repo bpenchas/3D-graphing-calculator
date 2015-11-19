@@ -25,6 +25,9 @@ public class Line3D {
 		public void rotate(double theta, double phi) {
 			GPoint firstPt = first.rotate(theta, phi).to2D();
 			GPoint secondPt = second.rotate(theta, phi).to2D();
+			if (firstPt == null || secondPt == null) {
+				return;
+			}
 			line2D.setStartPoint(firstPt.getX(), firstPt.getY());
 			line2D.setEndPoint(secondPt.getX(), secondPt.getY());
 		}
