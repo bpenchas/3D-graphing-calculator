@@ -223,9 +223,10 @@ public class GraphicsContest extends GraphicsProgram {
 //				zAxis.to2D().setEndPoint(zAxis.rotate(theta, phi).to2D().getEndPoint().getX(), zAxis.rotate(theta, phi).to2D().getEndPoint().getY());
 //				
 			
-			for (int i = 0; i < rectArray.length; i ++) {
-				for (int j = 0; j < rectArray.length; j ++) {
-					rectArray[i][j].rotate(theta, phi);
+			for (int i = 0; i < resolution; i ++) {
+				for (int j = 0; j < resolution; j ++) {
+					lineArray[i][j][0].rotate(theta, phi);
+					lineArray[i][j][1].rotate(theta, phi);
 				}
 			}
 			
