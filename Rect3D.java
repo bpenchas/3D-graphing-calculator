@@ -39,7 +39,7 @@ public class Rect3D {
 		
 	}
 	
-	public Rect3D rotate(double theta, double phi){
+	public void rotate(double theta, double phi){
 		return new Rect3D(cornerOne.rotate(theta, phi), cornerTwo.rotate(theta, phi), cornerThree.rotate(theta, phi), cornerFour.rotate(theta, phi));
 	}
 
