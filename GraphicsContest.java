@@ -97,14 +97,17 @@ public class GraphicsContest extends GraphicsProgram {
 			Operator currentOperator = Operator.fromString(token);
 			
 			if (currentOperator == Operator.NOOP) {
-				wasNum = true;
-				result.add(Value.fromString(token));
+				Value temp = Value.fromString(token);
+				result.add(temp);
+				if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y && wasNum) {
+					result.add(Operator.MULTIPLY);
+				}
 				if (nextIsNeg) {
 					result.add(negOne);
 					result.add(Operator.MULTIPLY);
 					nextIsNeg = false;
 				}
-				
+				wasNum = true;
 			}
 			 else {
 				if (currentOperator == Operator.SUBTRACT && !wasNum) {
@@ -150,6 +153,8 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		
 	}
+	
+	
 	
 	private static final int resolution = 100;
 	private Point3D[][] pointArray = new Point3D[resolution + 1][resolution + 1];
