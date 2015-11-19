@@ -1,6 +1,7 @@
 
-import acm.graphics.GLine;
+import java.awt.Color;
 
+import acm.graphics.GLine;
 import acm.graphics.GPoint;
 
 
