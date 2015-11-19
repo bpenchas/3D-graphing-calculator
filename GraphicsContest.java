@@ -192,12 +192,7 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		}
 		
-		for (int i = 0; i < rectArray.length; i ++) {
-			for (int j = 0; j < rectArray.length; j ++) {
-				rectArray[i][j] = new Rect3D(pointArray[i][j], pointArray[i+1][j], pointArray[i+1][j+1], pointArray[i][j+1]);
-				add(rectArray[i][j].to2D());
-			}
-		}
+		
 		
 		while(true) {
 			
