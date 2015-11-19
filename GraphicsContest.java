@@ -202,6 +202,9 @@ public class GraphicsContest extends GraphicsProgram {
 //				Line3D zAxis = new Line3D(origin, z);
 			
 			removeAll();
+//			add(xAxis.rotate(theta, phi).to2D());
+//			add(yAxis.rotate(theta, phi).to2D());
+//			add(zAxis.rotate(theta, phi).to2D());
 			
 //				xAxis.to2D().setStartPoint(xAxis.rotate(theta, phi).to2D().getStartPoint().getX(), xAxis.rotate(theta, phi).to2D().getStartPoint().getY());
 //				xAxis.to2D().setEndPoint(xAxis.rotate(theta, phi).to2D().getEndPoint().getX(), xAxis.rotate(theta, phi).to2D().getEndPoint().getY());
