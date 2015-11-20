@@ -101,8 +101,6 @@ public class GraphicsContest extends GraphicsProgram {
 //				result.add(temp);
 				if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y) {
 					if(wasNum) result.add(Operator.MULTIPLY);
-				} else {
-					wasNum = true;
 				}
 				result.add(temp);
 				if (nextIsNeg) {
@@ -110,6 +108,7 @@ public class GraphicsContest extends GraphicsProgram {
 					result.add(Operator.MULTIPLY);
 					nextIsNeg = false;
 				}
+				wasNum = true;
 				
 			}
 			 else {
