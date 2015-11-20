@@ -101,13 +101,15 @@ public class GraphicsContest extends GraphicsProgram {
 				result.add(temp);
 				if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y) {
 					if(wasNum) result.add(Operator.MULTIPLY);
+				} else {
+					wasNum = true;
 				}
 				if (nextIsNeg) {
 					result.add(negOne);
 					result.add(Operator.MULTIPLY);
 					nextIsNeg = false;
 				}
-				wasNum = true;
+				
 			}
 			 else {
 				if (currentOperator == Operator.SUBTRACT && !wasNum) {
