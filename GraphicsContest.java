@@ -98,11 +98,11 @@ public class GraphicsContest extends GraphicsProgram {
 			
 			if (currentOperator == Operator.NOOP) {
 				Value temp = Value.fromString(token);
-//				result.add(temp);
+				result.add(temp);
 				if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y) {
 					if(wasNum) result.add(Operator.MULTIPLY);
 				}
-				result.add(temp);
+			
 				if (nextIsNeg) {
 					result.add(negOne);
 					result.add(Operator.MULTIPLY);
