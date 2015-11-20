@@ -99,9 +99,9 @@ public class GraphicsContest extends GraphicsProgram {
 			if (currentOperator == Operator.NOOP) {
 				Value temp = Value.fromString(token);
 				result.add(temp);
-//				if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y && wasNum) {
-//					result.add(Operator.MULTIPLY);
-//				}
+				if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y) {
+					if(wasNum) result.add(Operator.MULTIPLY);
+				}
 				if (nextIsNeg) {
 					result.add(negOne);
 					result.add(Operator.MULTIPLY);
