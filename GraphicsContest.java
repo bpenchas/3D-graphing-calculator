@@ -107,7 +107,8 @@ public class GraphicsContest extends GraphicsProgram {
 						lineArray[i][j][1].rotate(theta, phi);
 					}
 				}
-				
+				boundaryLineOne.rotate(theta, phi);
+				boundaryLineTwo.rotate(theta, phi);
 				try {
 					Thread.sleep(24);
 				} catch (InterruptedException e) {
