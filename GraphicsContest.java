@@ -44,6 +44,8 @@ public class GraphicsContest extends GraphicsProgram {
 	private int resolution = 100;
 	private String equation = "";
 	
+	private LinkedList<Element> result = new LinkedList<Element>();
+	
 	public static GraphicsContest mainGraphicsContest;
 	
 	private int oldMouseX;
@@ -66,7 +68,7 @@ public class GraphicsContest extends GraphicsProgram {
 		oldMouseY = e.getY();
 	}
 	
-	private LinkedList<Element> result = new LinkedList<Element>();
+	
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == zoomInButton) {
