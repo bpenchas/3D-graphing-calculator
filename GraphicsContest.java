@@ -28,10 +28,6 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		mainGraphicsContest = this;
 		
-//		expressionField = new JTextField(10);
-//		add(new JLabel("Zoom Out"), NORTH);
-//		add(expressionField, NORTH);
-//		expressionField.addActionListener(this);
 		zoomInButton = new JButton("Zoom Out");
 		zoomOutButton = new JButton("Zoom In");
 		resolutionUpButton = new JButton("Increase Resoltuion");
