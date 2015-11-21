@@ -42,6 +42,7 @@ public class GraphicsContest extends GraphicsProgram {
 	private JButton zoomOutButton;
 	private JButton resolutionUpButton;
 	private int resolution = 100;
+	private String equation = "";
 	
 	public static GraphicsContest mainGraphicsContest;
 	
@@ -76,7 +77,7 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 	}
 	
-	private String equation = "";
+	
 	private void convertToPostfix() {
 		IODialog dialog = getDialog();
 		String equation = dialog.readLine("Enter an equation:");
