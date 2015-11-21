@@ -71,11 +71,6 @@ public class GraphicsContest extends GraphicsProgram {
 	private LinkedList<Element> result = new LinkedList<Element>();
 	
 	public void actionPerformed(ActionEvent e) {
-//		if (e.getSource() == expressionField) {
-//			equation = expressionField.getText();
-//		} else if (e.getSource() == clearButton) {
-//			equation = "";
-//		} else
 		if (e.getSource() == zoomInButton) {
 			Point3D.cameraToOrigin += 10;
 		} else if (e.getSource() == zoomOutButton) {
@@ -168,9 +163,7 @@ public class GraphicsContest extends GraphicsProgram {
 	private Point3D[][] pointArray = new Point3D[resolution + 1][resolution + 1];
 	private Line3D[][][] lineArray = new Line3D[resolution][resolution][2];
 	
-//	private Line3D xAxis;
-//	private Line3D yAxis;
-//	private Line3D zAxis;
+
 	
 	public void run() {
 		
@@ -209,34 +202,9 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		
 		while(true) {
-			
-//				Point3D z = new Point3D(0, 0, 10);
-//				Point3D y = new Point3D(0, 10, 0);
-//				Point3D x = new Point3D(10, 0, 0);
-//				Point3D origin = new Point3D(0, 0, 0);
-//				
-//				Line3D xAxis = new Line3D(origin, x);
-//				Line3D yAxis = new Line3D(origin, y);
-//				Line3D zAxis = new Line3D(origin, z);
-			
-			//removeAll();
 			xAxis.rotate(theta, phi);
 			yAxis.rotate(theta, phi);
-			zAxis.rotate(theta, phi);
-//			add(xAxis.rotate(theta, phi).to2D());
-//			add(yAxis.rotate(theta, phi).to2D());
-//			add(zAxis.rotate(theta, phi).to2D());
-			
-//				xAxis.to2D().setStartPoint(xAxis.rotate(theta, phi).to2D().getStartPoint().getX(), xAxis.rotate(theta, phi).to2D().getStartPoint().getY());
-//				xAxis.to2D().setEndPoint(xAxis.rotate(theta, phi).to2D().getEndPoint().getX(), xAxis.rotate(theta, phi).to2D().getEndPoint().getY());
-//				
-//				yAxis.to2D().setStartPoint(yAxis.rotate(theta, phi).to2D().getStartPoint().getX(), yAxis.rotate(theta, phi).to2D().getStartPoint().getY());
-//				yAxis.to2D().setEndPoint(yAxis.rotate(theta, phi).to2D().getEndPoint().getX(), yAxis.rotate(theta, phi).to2D().getEndPoint().getY());
-//				
-//				zAxis.to2D().setStartPoint(zAxis.rotate(theta, phi).to2D().getStartPoint().getX(), zAxis.rotate(theta, phi).to2D().getStartPoint().getY());
-//				zAxis.to2D().setEndPoint(zAxis.rotate(theta, phi).to2D().getEndPoint().getX(), zAxis.rotate(theta, phi).to2D().getEndPoint().getY());
-//				
-			
+			zAxis.rotate(theta, phi);		
 			for (int i = 0; i < resolution; i ++) {
 				for (int j = 0; j < resolution; j ++) {
 					lineArray[i][j][0].rotate(theta, phi);
@@ -248,86 +216,13 @@ public class GraphicsContest extends GraphicsProgram {
 			try {
 				Thread.sleep(24);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+			
+	}
 		
-//		Line3D test = new Line3D(x, z);
-//		Line3D test2 = new Line3D(y, z);
-//		Line3D test3 = new Line3D(x, y);
-//		while (true) {
-//			if (equation == "") {
-//				evaluate();
-//				for (int i = 0; i < pointArray.length; i ++) {
-//					for (int j = 0; j < pointArray.length; j ++) {
-//						Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
-//						Value.yValue = 20 * (j / (pointArray.length - 1.0)) - 10;
-//						pointArray[i][j] = new Point3D(Value.xValue, evaluatePostfix(result), Value.yValue);
-//						
-//					}
-//				}
-//				
-//				for (int i = 0; i < rectArray.length; i ++) {
-//					for (int j = 0; j < rectArray.length; j ++) {
-//						rectArray[i][j] = new Rect3D(pointArray[i][j], pointArray[i+1][j], pointArray[i+1][j+1], pointArray[i][j+1]);
-//					}
-//				}
-//			
-//
-//			
-//			
-//			
-//				while(true) {
-//					
-//	//				Point3D z = new Point3D(0, 0, 10);
-//	//				Point3D y = new Point3D(0, 10, 0);
-//	//				Point3D x = new Point3D(10, 0, 0);
-//	//				Point3D origin = new Point3D(0, 0, 0);
-//	//				
-//	//				Line3D xAxis = new Line3D(origin, x);
-//	//				Line3D yAxis = new Line3D(origin, y);
-//	//				Line3D zAxis = new Line3D(origin, z);
-//					
-//					removeAll();
-//					add(xAxis.rotate(theta, phi).to2D());
-//					add(yAxis.rotate(theta, phi).to2D());
-//					add(zAxis.rotate(theta, phi).to2D());
-//					
-//	//				xAxis.to2D().setStartPoint(xAxis.rotate(theta, phi).to2D().getStartPoint().getX(), xAxis.rotate(theta, phi).to2D().getStartPoint().getY());
-//	//				xAxis.to2D().setEndPoint(xAxis.rotate(theta, phi).to2D().getEndPoint().getX(), xAxis.rotate(theta, phi).to2D().getEndPoint().getY());
-//	//				
-//	//				yAxis.to2D().setStartPoint(yAxis.rotate(theta, phi).to2D().getStartPoint().getX(), yAxis.rotate(theta, phi).to2D().getStartPoint().getY());
-//	//				yAxis.to2D().setEndPoint(yAxis.rotate(theta, phi).to2D().getEndPoint().getX(), yAxis.rotate(theta, phi).to2D().getEndPoint().getY());
-//	//				
-//	//				zAxis.to2D().setStartPoint(zAxis.rotate(theta, phi).to2D().getStartPoint().getX(), zAxis.rotate(theta, phi).to2D().getStartPoint().getY());
-//	//				zAxis.to2D().setEndPoint(zAxis.rotate(theta, phi).to2D().getEndPoint().getX(), zAxis.rotate(theta, phi).to2D().getEndPoint().getY());
-//	//				
-//					
-//					for (int i = 0; i < rectArray.length; i ++) {
-//						for (int j = 0; j < rectArray.length; j ++) {
-//							GPolygon temp = rectArray[i][j].rotate(theta, phi).to2D();
-//							if (temp != null) {
-//								add(temp);
-//							}
-//							
-//						}
-//					}
-//					
-//					try {
-//						Thread.sleep(24);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//				}
-		
-			}
-		
-		
-		
-		
-	
+
 	
 	private GLine lineFromPoints(GPoint first, GPoint second) {
 		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
