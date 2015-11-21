@@ -199,13 +199,8 @@ public class GraphicsContest extends GraphicsProgram {
 		add(yAxis.to2D());
 		add(zAxis.to2D());
 		
-		try {
-			convertToPostfix();
-			addMesh();
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		convertToPostfix();
+		addMesh();
 		
 		
 		
