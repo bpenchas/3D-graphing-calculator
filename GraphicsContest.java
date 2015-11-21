@@ -63,15 +63,13 @@ public class GraphicsContest extends GraphicsProgram {
 		oldMouseX = e.getX();
 		oldMouseY = e.getY();
 	}
+	
 	public void mouseDragged(MouseEvent e) {
 		theta -= (e.getX() - oldMouseX) / 85.0;
 		phi += (e.getY() - oldMouseY) / 85.0;
-		
 		oldMouseX = e.getX();
 		oldMouseY = e.getY();
 	}
-	
-	
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == zoomInButton) {
@@ -83,6 +81,50 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 	}
 	
+	public void run() {
+		Point3D z = new Point3D(0, 0, 10);
+		Point3D y = new Point3D(0, 10, 0);
+		Point3D x = new Point3D(10, 0, 0);
+		Point3D origin = new Point3D(0, 0, 0);
+		
+		Line3D xAxis = new Line3D(origin, x);
+		Line3D yAxis = new Line3D(origin, y);
+		Line3D zAxis = new Line3D(origin, z);
+		
+		add(xAxis.to2D());
+		add(yAxis.to2D());
+		add(zAxis.to2D());
+		
+		try {
+			convertToPostfix();
+			addMesh();
+			
+			
+			
+			while(true) {
+				xAxis.rotate(theta, phi);
+				yAxis.rotate(theta, phi);
+				zAxis.rotate(theta, phi);		
+				for (int i = 0; i < resolution; i ++) {
+					for (int j = 0; j < resolution; j ++) {
+						lineArray[i][j][0].rotate(theta, phi);
+						lineArray[i][j][1].rotate(theta, phi);
+					}
+				}
+				
+				
+				try {
+					Thread.sleep(24);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+	}
 	
 	private void convertToPostfix() {
 		IODialog dialog = getDialog();
@@ -173,52 +215,7 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		}
 	}
-	public void run() {
-		
-		
-		Point3D z = new Point3D(0, 0, 10);
-		Point3D y = new Point3D(0, 10, 0);
-		Point3D x = new Point3D(10, 0, 0);
-		Point3D origin = new Point3D(0, 0, 0);
-		
-		Line3D xAxis = new Line3D(origin, x);
-		Line3D yAxis = new Line3D(origin, y);
-		Line3D zAxis = new Line3D(origin, z);
-		
-		add(xAxis.to2D());
-		add(yAxis.to2D());
-		add(zAxis.to2D());
-		
-		try {
-			convertToPostfix();
-			addMesh();
-			
-			
-			
-			while(true) {
-				xAxis.rotate(theta, phi);
-				yAxis.rotate(theta, phi);
-				zAxis.rotate(theta, phi);		
-				for (int i = 0; i < resolution; i ++) {
-					for (int j = 0; j < resolution; j ++) {
-						lineArray[i][j][0].rotate(theta, phi);
-						lineArray[i][j][1].rotate(theta, phi);
-					}
-				}
-				
-				
-				try {
-					Thread.sleep(24);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-			
-	}
+
 		
 
 	
