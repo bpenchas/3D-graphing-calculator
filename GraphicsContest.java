@@ -94,39 +94,45 @@ public class GraphicsContest extends GraphicsProgram {
 		while(st.hasMoreTokens()) {
 			
 			String token = st.nextToken();
-			//System.out.println(token);
-			Operator currentOperator = Operator.fromString(token);
 			
-			if (currentOperator == Operator.NOOP) {
-				Value temp = Value.fromString(token);
-				result.add(temp);
-				if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y) {
-					if(wasNum) result.add(Operator.MULTIPLY);
-				}
 			
-				if (nextIsNeg) {
-					result.add(negOne);
-					result.add(Operator.MULTIPLY);
-					nextIsNeg = false;
-				}
-				wasNum = true;
+			try {
+				Operator currentOperator = Operator.fromString(token);
 				
-			}
-			 else {
-				if (currentOperator == Operator.SUBTRACT && !wasNum) {
-					nextIsNeg = true;
-				} else {
-					if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
-						operators.push(currentOperator);
-					} else {
-						while (!operators.isEmpty() && operators.peek().stackPrecedence() >= currentOperator.inputPrecedence()) {
-							result.add(operators.pop());
-						}
-						operators.push(currentOperator);
+				if (currentOperator == Operator.NOOP) {
+					Value temp = Value.fromString(token);
+					result.add(temp);
+					if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y) {
+						if(wasNum) result.add(Operator.MULTIPLY);
 					}
-				}
-				wasNum = false;
 				
+					if (nextIsNeg) {
+						result.add(negOne);
+						result.add(Operator.MULTIPLY);
+						nextIsNeg = false;
+					}
+					wasNum = true;
+					
+				}
+				 else {
+					if (currentOperator == Operator.SUBTRACT && !wasNum) {
+						nextIsNeg = true;
+					} else {
+						if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
+							operators.push(currentOperator);
+						} else {
+							while (!operators.isEmpty() && operators.peek().stackPrecedence() >= currentOperator.inputPrecedence()) {
+								result.add(operators.pop());
+							}
+							operators.push(currentOperator);
+						}
+					}
+					wasNum = false;
+					
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		
 		}
