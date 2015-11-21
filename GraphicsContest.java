@@ -206,14 +206,19 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		}
 		
-		for (int i = 0; i < resolution; i ++) {
-			for (int j = 0; j < resolution; j ++) {
-				boundaryLineOne = new Line3D(pointArray[i][j+1], pointArray[i + 1][j + 1]);
-				boundaryLineTwo = new Line3D(pointArray[i+1][j], pointArray[i + 1][j + 1]);
-				add(boundaryLineOne.to2D());
-				add(boundaryLineTwo.to2D());
-			}
-		}
+		boundaryLineOne = new Line3D(pointArray[0][1], pointArray[1][1]);
+		boundaryLineTwo = new Line3D(pointArray[1][0], pointArray[1][1]);
+		add(boundaryLineOne.to2D());
+		add(boundaryLineTwo.to2D());
+		
+//		for (int i = 0; i < resolution; i ++) {
+//			for (int j = 0; j < resolution; j ++) {
+//				boundaryLineOne = new Line3D(pointArray[i][j+1], pointArray[i + 1][j + 1]);
+//				boundaryLineTwo = new Line3D(pointArray[i+1][j], pointArray[i + 1][j + 1]);
+//				add(boundaryLineOne.to2D());
+//				add(boundaryLineTwo.to2D());
+//			}
+//		}
 		
 	}
 	private Line3D boundaryLineOne;
