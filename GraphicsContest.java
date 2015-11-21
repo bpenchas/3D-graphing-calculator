@@ -107,6 +107,7 @@ public class GraphicsContest extends GraphicsProgram {
 						lineArray[i][j][1].rotate(theta, phi);
 					}
 				}
+				
 				try {
 					Thread.sleep(24);
 				} catch (InterruptedException e) {
@@ -206,14 +207,16 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		for (int i = 0; i < resolution; i ++) {
 			for (int j = 0; j < resolution; j ++) {
-				Line3D boundaryLineOne = new Line3D(pointArray[i][j+1], pointArray[i + 1][j + 1]);
-				Line3D boundaryLineTwo = new Line3D(pointArray[i+1][j], pointArray[i + 1][j + 1]);
+				boundaryLineOne = new Line3D(pointArray[i][j+1], pointArray[i + 1][j + 1]);
+				boundaryLineTwo = new Line3D(pointArray[i+1][j], pointArray[i + 1][j + 1]);
 				add(boundaryLineOne.to2D());
 				add(boundaryLineTwo.to2D());
 			}
 		}
 		
 	}
+	private Line3D boundaryLineOne;
+	private Line3D boundaryLineTwo;
 	
 	private GLine lineFromPoints(GPoint first, GPoint second) {
 		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
