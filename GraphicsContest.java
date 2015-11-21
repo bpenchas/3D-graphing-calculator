@@ -125,11 +125,11 @@ public class GraphicsContest extends GraphicsProgram {
 		String equation = dialog.readLine("Enter an equation:");
 		
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
-		
 		Stack<Operator> operators = new Stack<Operator>();
 		boolean wasNum = false;
 		boolean nextIsNeg = false;
 		Value negOne = Value.makeConstValue(-1);
+		
 		while(st.hasMoreTokens()) {
 			String token = st.nextToken();
 			Operator currentOperator = Operator.fromString(token);
