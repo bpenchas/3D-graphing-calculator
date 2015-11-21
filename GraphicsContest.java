@@ -203,12 +203,13 @@ public class GraphicsContest extends GraphicsProgram {
 				add(lineArray[i][j][1].to2D());
 			}
 		}
+		
 		for (int i = 0; i < resolution; i ++) {
 			for (int j = 0; j < resolution; j ++) {
-				Line3D lastLine = new Line3D(pointArray[i][j+1], pointArray[i + 1][j + 1]);
-				Line3D lastLineTwo = new Line3D(pointArray[i+1][j], pointArray[i + 1][j + 1]);
-				add(lastLine.to2D());
-				add(lastLineTwo.to2D());
+				Line3D boundaryLineOne = new Line3D(pointArray[i][j+1], pointArray[i + 1][j + 1]);
+				Line3D boundaryLineTwo = new Line3D(pointArray[i+1][j], pointArray[i + 1][j + 1]);
+				add(boundaryLineOne.to2D());
+				add(boundaryLineTwo.to2D());
 			}
 		}
 		
