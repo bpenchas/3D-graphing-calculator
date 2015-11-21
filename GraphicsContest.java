@@ -165,7 +165,24 @@ public class GraphicsContest extends GraphicsProgram {
 	private Line3D[][][] lineArray = new Line3D[resolution][resolution][2];
 	
 
-	
+	private void addMesh() {
+		for (int i = 0; i < pointArray.length; i ++) {
+			for (int j = 0; j < pointArray.length; j ++) {
+				Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
+				Value.yValue = 20 * (j / (pointArray.length - 1.0)) - 10;
+				pointArray[i][j] = new Point3D(Value.xValue, evaluatePostfix(result), Value.yValue);
+			}
+		}
+		
+		for (int i = 0; i < resolution; i ++) {
+			for (int j = 0; j < resolution; j ++) {
+				lineArray[i][j][0] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
+				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j]);
+				add(lineArray[i][j][0].to2D());
+				add(lineArray[i][j][1].to2D());
+			}
+		}
+	}
 	public void run() {
 		
 		
@@ -183,22 +200,7 @@ public class GraphicsContest extends GraphicsProgram {
 		add(zAxis.to2D());
 		
 		convertToPostfix();
-		for (int i = 0; i < pointArray.length; i ++) {
-			for (int j = 0; j < pointArray.length; j ++) {
-				Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
-				Value.yValue = 20 * (j / (pointArray.length - 1.0)) - 10;
-				pointArray[i][j] = new Point3D(Value.xValue, evaluatePostfix(result), Value.yValue);
-			}
-		}
-		
-		for (int i = 0; i < resolution; i ++) {
-			for (int j = 0; j < resolution; j ++) {
-				lineArray[i][j][0] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
-				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j]);
-				add(lineArray[i][j][0].to2D());
-				add(lineArray[i][j][1].to2D());
-			}
-		}
+		addMesh();
 		
 		
 		
