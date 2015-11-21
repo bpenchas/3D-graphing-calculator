@@ -88,26 +88,20 @@ public class GraphicsContest extends GraphicsProgram {
 		boolean nextIsNeg = false;
 		Value negOne = Value.makeConstValue(-1);
 		while(st.hasMoreTokens()) {
-			
 			String token = st.nextToken();
-			
-			
 			Operator currentOperator = Operator.fromString(token);
-			
 			if (currentOperator == Operator.NOOP) {
 				Value temp = Value.fromString(token);
 				result.add(temp);
 				if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y) {
 					if(wasNum) result.add(Operator.MULTIPLY);
 				}
-			
 				if (nextIsNeg) {
 					result.add(negOne);
 					result.add(Operator.MULTIPLY);
 					nextIsNeg = false;
 				}
 				wasNum = true;
-				
 			}
 			 else {
 				if (currentOperator == Operator.SUBTRACT && !wasNum) {
@@ -123,9 +117,7 @@ public class GraphicsContest extends GraphicsProgram {
 					}
 				}
 				wasNum = false;
-				
 			}
-		
 		}
 		
 		while (!operators.isEmpty()) {
