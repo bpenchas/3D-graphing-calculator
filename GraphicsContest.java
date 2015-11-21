@@ -97,8 +97,6 @@ public class GraphicsContest extends GraphicsProgram {
 			convertToPostfix();
 			addMesh();
 			
-			
-			
 			while(true) {
 				xAxis.rotate(theta, phi);
 				yAxis.rotate(theta, phi);
