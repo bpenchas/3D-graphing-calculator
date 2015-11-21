@@ -165,8 +165,8 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	
 	
-	private Point3D[][] pointArray = new Point3D[resolution + 1][resolution + 1];
-	private Line3D[][][] lineArray = new Line3D[resolution][resolution][2];
+	private Point3D[][] pointArray;
+	private Line3D[][][] lineArray;
 	
 //	private Line3D xAxis;
 //	private Line3D yAxis;
