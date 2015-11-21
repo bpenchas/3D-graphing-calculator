@@ -96,43 +96,38 @@ public class GraphicsContest extends GraphicsProgram {
 			String token = st.nextToken();
 			
 			
-			try {
-				Operator currentOperator = Operator.fromString(token);
-				
-				if (currentOperator == Operator.NOOP) {
-					Value temp = Value.fromString(token);
-					result.add(temp);
-					if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y) {
-						if(wasNum) result.add(Operator.MULTIPLY);
-					}
-				
-					if (nextIsNeg) {
-						result.add(negOne);
-						result.add(Operator.MULTIPLY);
-						nextIsNeg = false;
-					}
-					wasNum = true;
-					
+			Operator currentOperator = Operator.fromString(token);
+			
+			if (currentOperator == Operator.NOOP) {
+				Value temp = Value.fromString(token);
+				result.add(temp);
+				if (temp.state == Value.ValueEnum.X || temp.state == Value.ValueEnum.Y) {
+					if(wasNum) result.add(Operator.MULTIPLY);
 				}
-				 else {
-					if (currentOperator == Operator.SUBTRACT && !wasNum) {
-						nextIsNeg = true;
+			
+				if (nextIsNeg) {
+					result.add(negOne);
+					result.add(Operator.MULTIPLY);
+					nextIsNeg = false;
+				}
+				wasNum = true;
+				
+			}
+			 else {
+				if (currentOperator == Operator.SUBTRACT && !wasNum) {
+					nextIsNeg = true;
+				} else {
+					if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
+						operators.push(currentOperator);
 					} else {
-						if (operators.isEmpty() || operators.peek().stackPrecedence() < currentOperator.inputPrecedence()) {
-							operators.push(currentOperator);
-						} else {
-							while (!operators.isEmpty() && operators.peek().stackPrecedence() >= currentOperator.inputPrecedence()) {
-								result.add(operators.pop());
-							}
-							operators.push(currentOperator);
+						while (!operators.isEmpty() && operators.peek().stackPrecedence() >= currentOperator.inputPrecedence()) {
+							result.add(operators.pop());
 						}
+						operators.push(currentOperator);
 					}
-					wasNum = false;
-					
 				}
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				wasNum = false;
+				
 			}
 		
 		}
