@@ -32,16 +32,20 @@ public class GraphicsContest extends GraphicsProgram {
 //		add(new JLabel("Zoom Out"), NORTH);
 //		add(expressionField, NORTH);
 //		expressionField.addActionListener(this);
-		addButton = new JButton("Zoom Out");
-		clearButton = new JButton("Zoom In");
-		add(addButton, NORTH);
-		add(clearButton, NORTH);
+		zoomInButton = new JButton("Zoom Out");
+		zoomOutButton = new JButton("Zoom In");
+		resolutionUpButton = new JButton("Increase Resoltuion");
+		add(zoomInButton, NORTH);
+		add(zoomOutButton, NORTH);
+		add(resolutionUpButton, SOUTH);
 		addActionListeners();
 	}
 	
 	private JTextField expressionField;
-	private JButton addButton;
-	private JButton clearButton;
+	private JButton zoomInButton;
+	private JButton zoomOutButton;
+	private JButton resolutionUpButton;
+	private int resolution = 100;
 	
 	public static GraphicsContest mainGraphicsContest;
 	
@@ -72,10 +76,12 @@ public class GraphicsContest extends GraphicsProgram {
 //		} else if (e.getSource() == clearButton) {
 //			equation = "";
 //		} else
-		if (e.getSource() == addButton) {
+		if (e.getSource() == zoomInButton) {
 			Point3D.cameraToOrigin += 10;
-		} else if (e.getSource() == clearButton) {
+		} else if (e.getSource() == zoomOutButton) {
 			if (Point3D.cameraToOrigin > 10) Point3D.cameraToOrigin += -10;
+		} else if (e.getSource() == resolutionUpButton) {
+			resolution += 10;
 		}
 	}
 	
@@ -158,7 +164,7 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	
 	
-	private static final int resolution = 100;
+	
 	private Point3D[][] pointArray = new Point3D[resolution + 1][resolution + 1];
 	private Line3D[][][] lineArray = new Line3D[resolution][resolution][2];
 	
