@@ -75,7 +75,7 @@ public class GraphicsContest extends GraphicsProgram {
 		if (e.getSource() == addButton) {
 			Point3D.cameraToOrigin += 10;
 		} else if (e.getSource() == clearButton) {
-			Point3D.cameraToOrigin += -10;
+			if (Point3D.cameraToOrigin > 20) Point3D.cameraToOrigin += -10;
 		}
 	}
 	
