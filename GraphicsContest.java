@@ -45,6 +45,9 @@ public class GraphicsContest extends GraphicsProgram {
 	private String equation = "";
 	
 	private LinkedList<Element> result = new LinkedList<Element>();
+	private Point3D[][] pointArray = new Point3D[resolution + 1][resolution + 1];
+	private Line3D[][][] lineArray = new Line3D[resolution][resolution][2];
+	
 	
 	public static GraphicsContest mainGraphicsContest;
 	
@@ -150,9 +153,7 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	
 	
-	private Point3D[][] pointArray = new Point3D[resolution + 1][resolution + 1];
-	private Line3D[][][] lineArray = new Line3D[resolution][resolution][2];
-	
+
 
 	private void addMesh() {
 		for (int i = 0; i < pointArray.length; i ++) {
