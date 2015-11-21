@@ -24,10 +24,8 @@ import acm.program.GraphicsProgram;
 public class GraphicsContest extends GraphicsProgram {
 	
 	public void init() {
-		addMouseListeners();
-		
+		addMouseListeners();	
 		mainGraphicsContest = this;
-		
 		zoomInButton = new JButton("Zoom Out");
 		zoomOutButton = new JButton("Zoom In");
 		resolutionUpButton = new JButton("Increase Resoltuion");
@@ -37,19 +35,19 @@ public class GraphicsContest extends GraphicsProgram {
 		addActionListeners();
 	}
 	
+	public static GraphicsContest mainGraphicsContest;
+	
 	private JTextField expressionField;
 	private JButton zoomInButton;
 	private JButton zoomOutButton;
 	private JButton resolutionUpButton;
+	
 	private int resolution = 100;
 	private String equation = "";
 	
 	private LinkedList<Element> result = new LinkedList<Element>();
 	private Point3D[][] pointArray = new Point3D[resolution + 1][resolution + 1];
 	private Line3D[][][] lineArray = new Line3D[resolution][resolution][2];
-	
-	
-	public static GraphicsContest mainGraphicsContest;
 	
 	private int oldMouseX;
 	private int oldMouseY;
