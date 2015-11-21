@@ -86,7 +86,7 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 	private String equation = "";
-	private void evaluate() {
+	private void convertToPostfix() {
 		IODialog dialog = getDialog();
 		String equation = dialog.readLine("Enter an equation:");
 		
@@ -188,7 +188,7 @@ public class GraphicsContest extends GraphicsProgram {
 		add(yAxis.to2D());
 		add(zAxis.to2D());
 		
-		evaluate();
+		convertToPostfix();
 		for (int i = 0; i < pointArray.length; i ++) {
 			for (int j = 0; j < pointArray.length; j ++) {
 				Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
