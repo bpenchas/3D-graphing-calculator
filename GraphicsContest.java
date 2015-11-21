@@ -98,16 +98,8 @@ public class GraphicsContest extends GraphicsProgram {
 			addMesh();
 			
 			while(true) {
-				xAxis.rotate(theta, phi);
-				yAxis.rotate(theta, phi);
-				zAxis.rotate(theta, phi);		
-				for (int i = 0; i < resolution; i ++) {
-					for (int j = 0; j < resolution; j ++) {
-						lineArray[i][j][0].rotate(theta, phi);
-						lineArray[i][j][1].rotate(theta, phi);
-					}
-				}
 				
+				rotation();
 				
 				try {
 					Thread.sleep(24);
@@ -121,6 +113,19 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 			
 	}
+	
+	private void rotation() {
+		xAxis.rotate(theta, phi);
+		yAxis.rotate(theta, phi);
+		zAxis.rotate(theta, phi);		
+		for (int i = 0; i < resolution; i ++) {
+			for (int j = 0; j < resolution; j ++) {
+				lineArray[i][j][0].rotate(theta, phi);
+				lineArray[i][j][1].rotate(theta, phi);
+			}
+		}
+	}
+	
 	
 	private void convertToPostfix() {
 		IODialog dialog = getDialog();
