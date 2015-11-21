@@ -138,7 +138,6 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 	private double evaluatePostfix(LinkedList<Element> expression) {
-		
 		Stack<Double> value = new Stack<Double>();
 		Iterator iterator = expression.iterator();
 		while (iterator.hasNext()) {
@@ -150,8 +149,6 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		}
 		return value.pop();
-		
-		
 	}
 	
 	
