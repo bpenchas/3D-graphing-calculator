@@ -186,11 +186,6 @@ public class GraphicsContest extends GraphicsProgram {
 		return value.pop();
 	}
 	
-	
-	
-	
-
-
 	private void addMesh() {
 		for (int i = 0; i < pointArray.length; i ++) {
 			for (int j = 0; j < pointArray.length; j ++) {
@@ -209,9 +204,6 @@ public class GraphicsContest extends GraphicsProgram {
 			}
 		}
 	}
-
-		
-
 	
 	private GLine lineFromPoints(GPoint first, GPoint second) {
 		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
