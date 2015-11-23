@@ -197,10 +197,7 @@ public class GraphicsContest extends GraphicsProgram {
 		while (!operators.isEmpty()) {
 			result.add(operators.pop());
 		}
-		Iterator iterator = result.iterator();
-		while (iterator.hasNext()) {
-			System.out.println(iterator.next());
-		}
+		
 	}
 	
 	private double evaluatePostfix(LinkedList<Element> expression) {
