@@ -228,9 +228,9 @@ public class GraphicsContest extends GraphicsProgram {
 				if (colorCounter < 250) colorCounter++;
 				lineArray[i][j][0] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
 				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j]);
-				Color current = new Color(colorCounter, colorCounter, colorCounter);
-				lineArray[i][j][0].to2D().setColor(current);
-				lineArray[i][j][1].to2D().setColor(current);
+//				Color current = new Color(colorCounter, colorCounter, colorCounter);
+//				lineArray[i][j][0].to2D().setColor(current);
+//				lineArray[i][j][1].to2D().setColor(current);
 				add(lineArray[i][j][0].to2D());
 				add(lineArray[i][j][1].to2D());
 				
