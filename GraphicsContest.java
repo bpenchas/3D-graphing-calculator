@@ -58,7 +58,6 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	public static GraphicsContest mainGraphicsContest;
 	
-	private JTextField expressionField;
 	private JButton zoomInButton;
 	private JButton zoomOutButton;
 	
