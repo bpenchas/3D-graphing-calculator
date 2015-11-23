@@ -138,7 +138,7 @@ public class GraphicsContest extends GraphicsProgram {
 		while(st.hasMoreTokens()) {
 			String token = st.nextToken();
 			token.trim();
-//			if(token == " ") token = st.nextToken();
+			if(token == "") token = st.nextToken();
 			Operator currentOperator = Operator.fromString(token);
 			if (currentOperator == Operator.NOOP) {
 				Value temp = Value.fromString(token);
