@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 
+
 import acm.graphics.GLine;
 import acm.graphics.GPoint;
 
@@ -21,7 +22,7 @@ public class Line3D {
 			this.first = first;
 			this.second = second;
 			this.line2D = lineFromPoints(first.to2D(), second.to2D());
-			Color current = Color(150, 15, 15);
+			Color current = new Color(150, 150, 150);
 			this.line2D.setColor(current);
 		}
 		
