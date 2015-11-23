@@ -1,7 +1,6 @@
 
 import java.awt.Color;
 
-
 import acm.graphics.GLine;
 import acm.graphics.GPoint;
 
@@ -27,7 +26,7 @@ public class Line3D {
 			this.line2D = lineFromPoints(first.to2D(), second.to2D());
 			Color current = new Color(colorCounter, colorCounter, colorCounter);
 			this.line2D.setColor(current);
-			
+			System.out.println(colorCounter);
 		}
 		
 		public void rotate(double theta, double phi) {
