@@ -151,7 +151,7 @@ public class GraphicsContest extends GraphicsProgram {
 //		dialog.print("3. The function will be drawn in 3D. Click and drag to explore the function in 3D");
 //		dialog.print("4. Use the zoom buttons to change the viewing distance from the graph");
 		String equation = dialog.readLine("Z = ");
-		
+		equation.replaceAll("\\s","");
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
 		Stack<Operator> operators = new Stack<Operator>();
 		boolean wasNum = false;
@@ -160,8 +160,6 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		while(st.hasMoreTokens()) {
 			String token = st.nextToken();
-//			token.trim();
-//			if(token == "") token = st.nextToken();
 			Operator currentOperator = Operator.fromString(token);
 			if (currentOperator == Operator.NOOP) {
 				Value temp = Value.fromString(token);
