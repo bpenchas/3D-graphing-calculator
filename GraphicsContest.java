@@ -5,7 +5,6 @@
  */
 
 import java.awt.event.ActionEvent;
-
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -13,12 +12,10 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import acm.graphics.GLine;
 import acm.graphics.GPoint;
-import acm.graphics.GPolygon;
 import acm.io.IODialog;
 import acm.program.GraphicsProgram;
 
