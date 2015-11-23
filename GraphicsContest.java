@@ -150,8 +150,7 @@ public class GraphicsContest extends GraphicsProgram {
 	private void convertToPostfix() {
 		IODialog dialog = getDialog();
 		dialog.print("Welcome to the 3D Graphing Calculator!");
-		dialog.print("\n1. Enter an equation in terms of X and Y ( Z = your equation)");
-		dialog.print("\n2. The following operators are permitted: ^, *, /, + -");
+		dialog.print("\n2. Enter an equation in terms of X and Y. The following operators are permitted: ^, *, /, + -");
 		dialog.print("\n3. The function will be drawn in 3D. Click and drag to explore the function in 3D");
 		dialog.println("\n4. Use the zoom buttons to change the viewing distance from the graph");
 		dialog.println("\n5. Have fun! Example equations include: x^2+y^2, x+y, etc.");
