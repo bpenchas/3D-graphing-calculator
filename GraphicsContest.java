@@ -229,9 +229,6 @@ public class GraphicsContest extends GraphicsProgram {
 	private Line3D boundaryLineOne;
 	private Line3D boundaryLineTwo;
 	
-	private GLine lineFromPoints(GPoint first, GPoint second) {
-		return new GLine(first.getX(), first.getY(), second.getX(), second.getY());
-	}
 	
 
 }
