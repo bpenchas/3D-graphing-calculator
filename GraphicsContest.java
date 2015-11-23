@@ -125,8 +125,9 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	private void convertToPostfix() {
 		IODialog instructions = new IODialog();
-		instructions.print("Welcome to the thing");
+		
 		IODialog dialog = getDialog();
+		dialog.print("Welcome to the thing");
 		String equation = dialog.readLine("Enter an equation:");
 		
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
