@@ -76,7 +76,7 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	public int colorCounter = 50;
 	public int colorCounterTwo = 200;
-	public int colorCounterThree = 100;
+	public int colorCounterThree = 150;
 	
 	private String DELIMITERS = "+-*/^()xXyY";
 	
