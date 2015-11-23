@@ -24,7 +24,7 @@ public class Line3D {
 			this.first = first;
 			this.second = second;
 			this.line2D = lineFromPoints(first.to2D(), second.to2D());
-			Color current = new Color(255, 255, colorCounter);
+			Color current = new Color(255, colorCounter, 255);
 			this.line2D.setColor(current);
 			
 		}
