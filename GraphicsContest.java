@@ -232,7 +232,7 @@ public class GraphicsContest extends GraphicsProgram {
 				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j]);
 				add(lineArray[i][j][0].to2D());
 				add(lineArray[i][j][1].to2D());
-				colorCounter++;
+				if (colorCounter < 250) colorCounter++;
 			}
 		}
 		
