@@ -224,9 +224,7 @@ public class GraphicsContest extends GraphicsProgram {
 		}
 		
 		for (int i = 0; i < resolution; i ++) {
-			System.out.println(colorCounter);
 			for (int j = 0; j < resolution; j ++) {
-				
 				
 				lineArray[i][j][0] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
 				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j]);
