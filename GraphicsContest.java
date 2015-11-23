@@ -108,9 +108,9 @@ public class GraphicsContest extends GraphicsProgram {
 		Point3D x = new Point3D(10, 0, 0);
 		Point3D origin = new Point3D(0, 0, 0);
 		
-		Line3D xAxis = new Line3D(origin, x);
-		Line3D yAxis = new Line3D(origin, y);
-		Line3D zAxis = new Line3D(origin, z);
+		Line3D xAxis = new Line3D(origin, x, colorCounter);
+		Line3D yAxis = new Line3D(origin, y, colorCounter);
+		Line3D zAxis = new Line3D(origin, z), colorCounter;
 		
 		add(xAxis.to2D());
 		add(yAxis.to2D());
