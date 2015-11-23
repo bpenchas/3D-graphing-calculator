@@ -17,9 +17,10 @@ public class Line3D {
 		public GLine to2D() {
 			return line2D;
 		}
-		public int colorCounter = 150;
+		
 		
 		public Line3D(Point3D first, Point3D second) {
+			int colorCounter = GraphicsContest.mainGraphicsContest.colorCounter;
 			this.first = first;
 			this.second = second;
 			this.line2D = lineFromPoints(first.to2D(), second.to2D());
