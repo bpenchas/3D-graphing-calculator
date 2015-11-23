@@ -130,8 +130,6 @@ public class GraphicsContest extends GraphicsProgram {
 						lineArray[i][j][1].rotate(theta, phi);
 					}
 				}
-				boundaryLineOne.rotate(theta, phi);
-				boundaryLineTwo.rotate(theta, phi);
 				try {
 					Thread.sleep(24);
 				} catch (InterruptedException e) {
@@ -232,29 +230,16 @@ public class GraphicsContest extends GraphicsProgram {
 				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j]);
 				Color current = new Color(colorCounter, colorCounter, colorCounter);
 				lineArray[i][j][0].to2D().setColor(current);
+				lineArray[i][j][1].to2D().setColor(current);
 				add(lineArray[i][j][0].to2D());
 				add(lineArray[i][j][1].to2D());
 				
 			}
 		}
 		
-		boundaryLineOne = new Line3D(pointArray[0][1], pointArray[1][1]);
-		boundaryLineTwo = new Line3D(pointArray[1][0], pointArray[1][1]);
-		add(boundaryLineOne.to2D());
-		add(boundaryLineTwo.to2D());
-		
-//		for (int i = 0; i < resolution; i ++) {
-//			for (int j = 0; j < resolution; j ++) {
-//				boundaryLineOne = new Line3D(pointArray[i][j+1], pointArray[i + 1][j + 1]);
-//				boundaryLineTwo = new Line3D(pointArray[i+1][j], pointArray[i + 1][j + 1]);
-//				add(boundaryLineOne.to2D());
-//				add(boundaryLineTwo.to2D());
-//			}
-//		}
 		
 	}
-	private Line3D boundaryLineOne;
-	private Line3D boundaryLineTwo;
+	
 	
 	
 
