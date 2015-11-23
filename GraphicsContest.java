@@ -97,8 +97,6 @@ public class GraphicsContest extends GraphicsProgram {
 			Point3D.cameraToOrigin += 10;
 		} else if (e.getSource() == zoomOutButton) {
 			if (Point3D.cameraToOrigin > 10) Point3D.cameraToOrigin += -10;
-		} else if (e.getSource() == resolutionUpButton) {
-			resolution += 10;
 		}
 	}
 	
