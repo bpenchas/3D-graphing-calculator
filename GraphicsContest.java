@@ -32,6 +32,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Stack;
 import java.util.StringTokenizer;
+import java.awt.color.*;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -229,6 +230,7 @@ public class GraphicsContest extends GraphicsProgram {
 				if (colorCounter < 250) colorCounter++;
 				lineArray[i][j][0] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
 				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j]);
+				lineArray[i][j][0].to2D().setColor(colorCounter, colorCounter, colorCounter);
 				add(lineArray[i][j][0].to2D());
 				add(lineArray[i][j][1].to2D());
 				
