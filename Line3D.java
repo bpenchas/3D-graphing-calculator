@@ -21,7 +21,8 @@ public class Line3D {
 			this.first = first;
 			this.second = second;
 			this.line2D = lineFromPoints(first.to2D(), second.to2D());
-			this.line2D.setColor(Color.RED);
+			Color current = Color.getHSBColor(150.0, .5, .5);
+			this.line2D.setColor(current);
 		}
 		
 		public void rotate(double theta, double phi) {
