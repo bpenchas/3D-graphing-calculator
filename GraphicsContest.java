@@ -76,7 +76,7 @@ public class GraphicsContest extends GraphicsProgram {
 	public double theta = 0;
 	public double phi = 0;
 	
-	public int colorCounter = 0;
+	public int colorCounter = 100;
 	
 	private String DELIMITERS = "+-*/^()xXyY";
 	
