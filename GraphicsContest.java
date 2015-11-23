@@ -126,8 +126,8 @@ public class GraphicsContest extends GraphicsProgram {
 	private void convertToPostfix() {
 		IODialog dialog = getDialog();
 		dialog.println("Welcome to the 3D Graphing Calculator!");
-		dialog.println("1. Enter an equation in terms of x and y");
-		dialog.println("2. The following operators are permitted: ^, *, /, + -");
+		dialog.print("1. Enter an equation in terms of X and Y ( Z = your equation)");
+		dialog.print("2. The following operators are permitted: ^, *, /, + -");
 		String equation = dialog.readLine("Z = ");
 		
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
