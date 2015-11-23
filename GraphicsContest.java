@@ -125,9 +125,11 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	private void convertToPostfix() {
 		IODialog dialog = getDialog();
-		dialog.print("Welcome to the 3D Graphing Calculator!");
-		dialog.print("1. Enter an equation in terms of X and Y ( Z = your equation)");
+		dialog.println("Welcome to the 3D Graphing Calculator!");
+		dialog.println("1. Enter an equation in terms of X and Y ( Z = your equation)");
 		dialog.println("2. The following operators are permitted: ^, *, /, + -");
+		dialog.println("3. The function will be drawn in 3D. Click and drag to explore the function in 3D");
+		dialog.println("4. Use the zoom buttons to change the viewing distance from the graph");
 		String equation = dialog.readLine("Z = ");
 		
 		StringTokenizer st = new StringTokenizer(equation, DELIMITERS, true);
