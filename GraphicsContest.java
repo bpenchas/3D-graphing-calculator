@@ -225,7 +225,7 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		for (int i = 0; i < resolution; i ++) {
 			for (int j = 0; j < resolution; j ++) {
-				
+				colorCounter++;
 				lineArray[i][j][0] = new Line3D(pointArray[i][j], pointArray[i][j + 1], colorCounter);
 				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j], colorCounter);
 				Color current = new Color(colorCounter, colorCounter, colorCounter);
