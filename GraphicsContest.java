@@ -217,7 +217,7 @@ public class GraphicsContest extends GraphicsProgram {
 	private void addMesh() {
 		for (int i = 0; i < pointArray.length; i ++) {
 			for (int j = 0; j < pointArray.length; j ++) {
-				if (colorCounter < 250) colorCounter++;
+				
 				Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
 				Value.yValue = 20 * (j / (pointArray.length - 1.0)) - 10;
 				pointArray[i][j] = new Point3D(Value.xValue, evaluatePostfix(result), Value.yValue);
@@ -226,6 +226,7 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		for (int i = 0; i < resolution; i ++) {
 			for (int j = 0; j < resolution; j ++) {
+				if (colorCounter < 250) colorCounter++;
 				lineArray[i][j][0] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
 				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j]);
 				add(lineArray[i][j][0].to2D());
