@@ -17,12 +17,13 @@ public class Line3D {
 		public GLine to2D() {
 			return line2D;
 		}
+		public int colorCounter = 150;
 		
 		public Line3D(Point3D first, Point3D second) {
 			this.first = first;
 			this.second = second;
 			this.line2D = lineFromPoints(first.to2D(), second.to2D());
-			Color current = new Color(150, 150, 150);
+			Color current = new Color(colorCounter, colorCounter, colorCounter);
 			this.line2D.setColor(current);
 		}
 		
