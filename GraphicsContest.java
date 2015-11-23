@@ -26,6 +26,7 @@
  * --------------------------
  */
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
@@ -230,7 +231,8 @@ public class GraphicsContest extends GraphicsProgram {
 				if (colorCounter < 250) colorCounter++;
 				lineArray[i][j][0] = new Line3D(pointArray[i][j], pointArray[i][j + 1]);
 				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j]);
-				lineArray[i][j][0].to2D().setColor(colorCounter, colorCounter, colorCounter);
+				Color current = new Color(colorCounter, colorCounter, colorCounter);
+				lineArray[i][j][0].to2D().setColor(current);
 				add(lineArray[i][j][0].to2D());
 				add(lineArray[i][j][1].to2D());
 				
