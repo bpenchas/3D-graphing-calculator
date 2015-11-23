@@ -51,10 +51,8 @@ public class GraphicsContest extends GraphicsProgram {
 		mainGraphicsContest = this;
 		zoomInButton = new JButton("Zoom Out");
 		zoomOutButton = new JButton("Zoom In");
-		resolutionUpButton = new JButton("Increase Resoltuion");
 		add(zoomInButton, NORTH);
 		add(zoomOutButton, NORTH);
-		add(resolutionUpButton, SOUTH);
 		addActionListeners();
 	}
 	
@@ -63,7 +61,6 @@ public class GraphicsContest extends GraphicsProgram {
 	private JTextField expressionField;
 	private JButton zoomInButton;
 	private JButton zoomOutButton;
-	private JButton resolutionUpButton;
 	
 	private int resolution = 100;
 	private String equation = "";
