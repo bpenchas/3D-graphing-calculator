@@ -1,5 +1,27 @@
 /*
  * File: GraphicsContest.java
+ * 
+ * Author: Ben Penchas
+ * 
+ * Section Leader: Kat Gregory
+ * 
+ * This file implements a 3D Graphing Calculator.
+ * 
+ * Interesting/difficult features:
+ * 
+ * 1. I wrote my own parser for expressions entered into the dialog box.
+ * 	This parser first converts the expression to reverse polish notation
+ * and then evaluates the expression for a variety of x and y values.
+ * 
+ * 2. The parser can handle parentheses.
+ * 
+ * 3. The sense of 3D is created using projection matrices.
+ * 
+ * 4. The user can explore the 3D graph, a result of constantly applied rotation matrices.
+ * 
+ * 5. The user can zoom in and out of the graph.
+ * 
+ * 
 
  * --------------------------
  */
