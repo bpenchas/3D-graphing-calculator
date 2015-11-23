@@ -53,7 +53,7 @@ public class GraphicsContest extends GraphicsProgram {
 	public double theta = 0;
 	public double phi = 0;
 	
-	private String DELIMITERS = " +-*/^()xXyY";
+	private String DELIMITERS = "+-*/^()xXyY";
 	
 	public void mousePressed(MouseEvent e) {
 		oldMouseX = e.getX();
