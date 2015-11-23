@@ -76,7 +76,8 @@ public class GraphicsContest extends GraphicsProgram {
 	public double theta = 0;
 	public double phi = 0;
 	
-	public int colorCounter = 100;
+	public int colorCounter = 50;
+	public int colorCounterTwo = 250;
 	
 	private String DELIMITERS = "+-*/^()xXyY";
 	
@@ -224,11 +225,12 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		for (int i = 0; i < resolution; i ++) {
 			if(colorCounter < 250) colorCounter++;
+			if(colorCounterTwo > 10) colorCounterTwo--;
 			for (int j = 0; j < resolution; j ++) {
 				
 				lineArray[i][j][0] = new Line3D(pointArray[i][j], pointArray[i][j + 1], colorCounter);
 				lineArray[i][j][1] = new Line3D(pointArray[i][j], pointArray[i + 1][j], colorCounter);
-				Color current = new Color(colorCounter, 255, 150);
+				Color current = new Color(colorCounter, colorCounterTwo, 150);
 				lineArray[i][j][0].to2D().setColor(current);
 				lineArray[i][j][1].to2D().setColor(current);
 				add(lineArray[i][j][0].to2D());
