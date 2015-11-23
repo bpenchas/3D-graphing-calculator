@@ -37,10 +37,7 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 import javax.swing.JButton;
-import javax.swing.JTextField;
 
-import acm.graphics.GLine;
-import acm.graphics.GPoint;
 import acm.io.IODialog;
 import acm.program.GraphicsProgram;
 
