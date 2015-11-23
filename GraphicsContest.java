@@ -33,7 +33,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Stack;
 import java.util.StringTokenizer;
-import java.awt.color.*;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
