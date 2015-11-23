@@ -110,7 +110,7 @@ public class GraphicsContest extends GraphicsProgram {
 		
 		Line3D xAxis = new Line3D(origin, x, colorCounter);
 		Line3D yAxis = new Line3D(origin, y, colorCounter);
-		Line3D zAxis = new Line3D(origin, z), colorCounter;
+		Line3D zAxis = new Line3D(origin, z, colorCounter);
 		
 		add(xAxis.to2D());
 		add(yAxis.to2D());
