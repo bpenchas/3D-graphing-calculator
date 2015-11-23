@@ -21,6 +21,8 @@
  * 
  * 5. The user can zoom in and out of the graph.
  * 
+ * 6. The graph is in multiple colors, allowing for perspective.
+ * 
  * 
 
  * --------------------------
@@ -147,11 +149,11 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	private void convertToPostfix() {
 		IODialog dialog = getDialog();
-//		dialog.println("Welcome to the 3D Graphing Calculator!");
-//		dialog.print("1. Enter an equation in terms of X and Y ( Z = your equation)");
-//		dialog.print("2. The following operators are permitted: ^, *, /, + -");
-//		dialog.print("3. The function will be drawn in 3D. Click and drag to explore the function in 3D");
-//		dialog.print("4. Use the zoom buttons to change the viewing distance from the graph");
+		dialog.print("Welcome to the 3D Graphing Calculator!");
+		dialog.print("1. Enter an equation in terms of X and Y ( Z = your equation)");
+		dialog.print("2. The following operators are permitted: ^, *, /, + -");
+		dialog.print("3. The function will be drawn in 3D. Click and drag to explore the function in 3D");
+		dialog.println("4. Use the zoom buttons to change the viewing distance from the graph");
 		String tempEquation = dialog.readLine("Z = ");
 		equation = tempEquation.replaceAll("\\s+","");
 		System.out.println(equation);
