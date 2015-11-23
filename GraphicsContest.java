@@ -216,8 +216,9 @@ public class GraphicsContest extends GraphicsProgram {
 	
 	private void addMesh() {
 		for (int i = 0; i < pointArray.length; i ++) {
+			if(colorCounterThree < 250) colorCounterThree++;
 			for (int j = 0; j < pointArray.length; j ++) {
-				if(colorCounterThree < 250) colorCounterThree++;
+				
 				Value.xValue = 20 * (i / (pointArray.length - 1.0)) - 10;
 				Value.yValue = 20 * (j / (pointArray.length - 1.0)) - 10;
 				pointArray[i][j] = new Point3D(Value.xValue, evaluatePostfix(result), Value.yValue);
