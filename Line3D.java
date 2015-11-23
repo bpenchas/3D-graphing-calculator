@@ -22,9 +22,7 @@ public class Line3D {
 			this.first = first;
 			this.second = second;
 			this.line2D = lineFromPoints(first.to2D(), second.to2D());
-//			Color current = new Color(colorCounter, colorCounter, colorCounter);
-//			this.line2D.setColor(current);
-			
+
 		}
 		
 		public void rotate(double theta, double phi) {
