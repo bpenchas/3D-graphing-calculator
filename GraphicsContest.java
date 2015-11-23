@@ -5,6 +5,7 @@
  */
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -123,6 +124,8 @@ public class GraphicsContest extends GraphicsProgram {
 	}
 	
 	private void convertToPostfix() {
+		IODialog instructions = new IODialog();
+		instructions.print("Welcome to the thing");
 		IODialog dialog = getDialog();
 		String equation = dialog.readLine("Enter an equation:");
 		
